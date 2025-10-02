@@ -29,7 +29,7 @@ class AuthWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      return HomeScreen(username: user.email ?? "User");
+      return HomeScreen();
     } else {
       return LoginScreen();
     }

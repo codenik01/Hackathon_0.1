@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
         context,
         MaterialPageRoute(
             builder: (_) =>
-                HomeScreen(username: userCredential.user!.email!.split('@')[0])),
+                HomeScreen()), // Pass username if needed
       );
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
