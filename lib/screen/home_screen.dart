@@ -2,9 +2,16 @@ import 'package:care_plus/screen/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   final String username;
   HomeScreen({required this.username});
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
 
   Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
@@ -14,11 +21,23 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  // Example pages for each tab
+  static List<Widget> _pages = <Widget>[
+    Center(child: Text('Home', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Search', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Profile', style: TextStyle(fontSize: 24))),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        // Your drawer content here
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -33,17 +52,15 @@ class HomeScreen extends StatelessWidget {
               leading: Icon(Icons.home),
               title: Text('Home'),
               onTap: () {
-                // Handle navigation or close drawer
                 Navigator.pop(context);
               },
             ),
-            // Add more ListTile items here
+            // Add more items if needed
           ],
         ),
       ),
       appBar: AppBar(
-        title: Text("Welcome $username"),
-        // The hamburger menu (Drawer icon) appears automatically when drawer is provided in Scaffold
+        title: Text("Welcome ${widget.username}"),
         actions: [
           IconButton(
             onPressed: () => logout(context),
@@ -51,9 +68,15 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-
-      body: Center(
-        child: Text("Hello, $username!", style: TextStyle(fontSize: 24)),
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
       ),
     );
   }
