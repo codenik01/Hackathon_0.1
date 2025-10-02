@@ -38,7 +38,7 @@ class _ChatScreenState extends State<ChatScreen> {
     } else if (userMessage.contains("thanks") || userMessage.contains("thank you")) {
       reply = "You're welcome! 😊";
     }
-     else if (userMessage.contains("i have headacke")) {
+     else if (userMessage.contains("i have headache")) {
       reply = "Sure! use paracetamol 500mg for headache. If it persists, consult a doctor.";
     }else if (userMessage.contains("i have fever")) {
       reply = "Sure! use nisib cold and flue for fever. If it persists, consult a doctor.";
@@ -47,10 +47,34 @@ class _ChatScreenState extends State<ChatScreen> {
     } else if (userMessage.contains("i have cough")) {
       reply = "Sure! so suck a dik in mouth for cough. If possible try to give you dick in addi named boys mouth.";
     }
+    else if (userMessage.contains("i have type 2 diabetes")) {
+      reply = "Sure! use Metformin, Insulin. If it persists consult a doctor";
+    }
+    else if (userMessage.contains("i have hypertension")) {
+      reply = "Sure! use ACE inhibitors, calcium channel blocker. If it persists , consult a doctor.";
+    }
+    else if (userMessage.contains("i have tuberculosis")) {
+      reply = "Sure! use Isoniazid, rifampicin, pyrazinamide or ethambutol. If it persists , consult a doctor.";
+    }
+     else if (userMessage.contains("i have malaria ")) {
+      reply = "Sure! use Artemisinin combination therapies. If it persists , consult a doctor.";
+    }
+    else if (userMessage.contains("i have typhoid ")) {
+      reply = "Sure! use Azithromycin or ceftriaxone, . If it persists , consult a doctor.";
+    }
+     else if (userMessage.contains("i have dengue ")) {
+      reply = "Sure! use Supportive care (fluids, paracetamol) . If it persists , consult a doctor.";
+    }
+     else if (userMessage.contains("i have HIV/ AIDS")) {
+      reply = "Sure! use Azithromycin, ceftriaxone, or fluoroquinolones . If it persists , consult a doctor.";
+    }
+    else if (userMessage.contains("i have influenza")) {
+      reply = "Sure! use  . If it persists , consult a doctor.";
+    }
      else {
       reply = "I didn’t fully understand, but I’m here to help!";
     }
-
+    
     setState(() {
       _messages.add({"sender": "bot", "text": reply});
     });
