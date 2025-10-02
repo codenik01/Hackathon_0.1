@@ -1,11 +1,11 @@
 import 'package:care_plus/screen/custom_drawer.dart';
+import 'package:care_plus/screen/hospital_locator_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'chat_screen.dart';
-import 'hospital_list_screen.dart';
-import 'profile_screen.dart';
 
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pages = [
     ChatScreen(),
-    HospitalListScreen(),
+    HospitalLocatorScreen(),
     ProfileScreen(),
   ];
 
