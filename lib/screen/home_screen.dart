@@ -37,9 +37,39 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pages = <Widget>[
-      ChatScreen(), // ✅ Replaced Home with Chat
-      Center(child: Text('Search', style: TextStyle(fontSize: 24))),
-      // Profile Page (unchanged)
+      ChatScreen(), // Page 0
+      // 👇 Hospitals List Page (Page 1)
+      ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          ListTile(
+            leading: Icon(Icons.local_hospital, color: Colors.blue),
+            title: Text('City Care Hospital'),
+            subtitle: Text('123 Main Street'),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              // Navigate to hospital details screen if needed
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.local_hospital, color: Colors.green),
+            title: Text('Green Valley Clinic'),
+            subtitle: Text('456 Park Avenue'),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {},
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.local_hospital, color: Colors.red),
+            title: Text('Sunrise Medical Center'),
+            subtitle: Text('789 Health Blvd'),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {},
+          ),
+        ],
+      ),
+      // 👇 Profile Page (Page 2)
       FutureBuilder<String>(
         future: getUsername(),
         builder: (context, snapshot) {
