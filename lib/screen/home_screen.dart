@@ -38,6 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+  child: Column(
+    children: [
+      Expanded(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -55,17 +58,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.pop(context);
               },
             ),
-            // Add more items if needed
+            // Add more items here if needed
           ],
         ),
       ),
+      // Logout button at the bottom
+      ListTile(
+        leading: Icon(Icons.logout),
+        title: Text('Logout'),
+        onTap: () => logout(context),
+      ),
+      
+    ],
+  ),
+),
+
       appBar: AppBar(
         title: Text("Welcome ${widget.username}"),
         actions: [
-          IconButton(
-            onPressed: () => logout(context),
-            icon: Icon(Icons.logout),
-          ),
+          
         ],
       ),
       body: _pages[_selectedIndex],
