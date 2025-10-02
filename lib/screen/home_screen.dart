@@ -1,9 +1,11 @@
-import 'package:care_plus/screen/chat_screen.dart';
-import 'package:care_plus/screen/login_screen.dart';
-import 'package:care_plus/screen/ospitalDetailsScreen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:care_plus/screen/custom_drawer.dart';
+import 'package:care_plus/screen/hospital_locator_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import 'chat_screen.dart';
+
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -13,174 +15,22 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  Future<void> logout(BuildContext context) async {
-    await FirebaseAuth.instance.signOut();
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (_) => LoginScreen()),
-    );
-  }
+  final List<Widget> _pages = [
+    ChatScreen(),
+    HospitalLocatorScreen(),
+    ProfileScreen(),
+  ];
 
-  User? get currentUser => FirebaseAuth.instance.currentUser;
-
-  Future<String> getUsername() async {
-    if (currentUser == null) return 'No username';
-    final doc = await FirebaseFirestore.instance
-        .collection('users')
-        .doc(currentUser!.uid)
-        .get();
-    if (doc.exists) {
-      return doc.data()?['username'] ?? 'No username';
-    }
-    return 'No username';
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> _pages = <Widget>[
-      ChatScreen(), // Page 0
-      // 👇 Hospitals List Page (Page 1)
-      ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          ListTile(
-            leading: Icon(Icons.local_hospital, color: Colors.blue),
-            title: Text('City Care Hospital'),
-            subtitle: Text('123 Main Street'),
-            trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => HospitalDetailsScreen(
-                    hospitalName: 'City Care Hospital',
-                    doctorName: 'Dr. Rakesh Kumar',
-                    contactNumber: '+91 9876543210',
-                    location: '123 Main Street, City Center',
-                  ),
-                ),
-              );
-            },
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.local_hospital, color: Colors.green),
-            title: Text('Green Valley Clinic'),
-            subtitle: Text('456 Park Avenue'),
-            trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => HospitalDetailsScreen(
-                    hospitalName: 'Green Valley Clinic',
-                    doctorName: 'Dr. Priya Sharma',
-                    contactNumber: '+91 9123456789',
-                    location: '456 Park Avenue, Sector 5',
-                  ),
-                ),
-              );
-            },
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.local_hospital, color: Colors.red),
-            title: Text('Sunrise Medical Center'),
-            subtitle: Text('789 Health Blvd'),
-            trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => HospitalDetailsScreen(
-                    hospitalName: 'Sunrise Medical Center',
-                    doctorName: 'Dr. Meena Joshi',
-                    contactNumber: '+91 9988776655',
-                    location: '789 Health Blvd, East Wing',
-                  ),
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-
-      // 👇 Profile Page (Page 2)
-      FutureBuilder<String>(
-        future: getUsername(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return Center(child: CircularProgressIndicator());
-          }
-          final username = snapshot.data!;
-          return Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 60,
-                  backgroundImage: currentUser?.photoURL != null
-                      ? NetworkImage(currentUser!.photoURL!)
-                      : AssetImage('assets/default_avatar.png')
-                            as ImageProvider,
-                ),
-                SizedBox(height: 20),
-                Text(
-                  username,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  currentUser?.email ?? 'No email',
-                  style: TextStyle(fontSize: 18, color: Colors.grey[700]),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    ];
-
-    void _onItemTapped(int index) {
-      setState(() {
-        _selectedIndex = index;
-      });
-    }
-
     return Scaffold(
-      drawer: Drawer(
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: <Widget>[
-                  DrawerHeader(
-                    decoration: BoxDecoration(color: Colors.blue),
-                    child: Text(
-                      'Menu',
-                      style: TextStyle(color: Colors.white, fontSize: 24),
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                ],
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
-              onTap: () => logout(context),
-            ),
-          ],
-        ),
-      ),
+      drawer: CustomDrawer(),
       appBar: AppBar(title: Text("Welcome")),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -190,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.local_hospital),
-            label: 'hospitals',
+            label: 'Hospitals',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
