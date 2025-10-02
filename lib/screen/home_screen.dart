@@ -1,5 +1,6 @@
 import 'package:care_plus/screen/chat_screen.dart';
 import 'package:care_plus/screen/login_screen.dart';
+import 'package:care_plus/screen/ospitalDetailsScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,17 @@ class _HomeScreenState extends State<HomeScreen> {
             subtitle: Text('123 Main Street'),
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {
-              // Navigate to hospital details screen if needed
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => HospitalDetailsScreen(
+                    hospitalName: 'City Care Hospital',
+                    doctorName: 'Dr. Rakesh Kumar',
+                    contactNumber: '+91 9876543210',
+                    location: '123 Main Street, City Center',
+                  ),
+                ),
+              );
             },
           ),
           Divider(),
@@ -57,7 +68,19 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text('Green Valley Clinic'),
             subtitle: Text('456 Park Avenue'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => HospitalDetailsScreen(
+                    hospitalName: 'Green Valley Clinic',
+                    doctorName: 'Dr. Priya Sharma',
+                    contactNumber: '+91 9123456789',
+                    location: '456 Park Avenue, Sector 5',
+                  ),
+                ),
+              );
+            },
           ),
           Divider(),
           ListTile(
@@ -65,10 +88,23 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text('Sunrise Medical Center'),
             subtitle: Text('789 Health Blvd'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => HospitalDetailsScreen(
+                    hospitalName: 'Sunrise Medical Center',
+                    doctorName: 'Dr. Meena Joshi',
+                    contactNumber: '+91 9988776655',
+                    location: '789 Health Blvd, East Wing',
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),
+
       // 👇 Profile Page (Page 2)
       FutureBuilder<String>(
         future: getUsername(),
