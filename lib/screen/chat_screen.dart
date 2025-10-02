@@ -25,60 +25,51 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   void _botReply(String userMessage) {
-    String reply;
+  String reply;
 
-    // Basic reply logic
-    userMessage = userMessage.toLowerCase();
-    if (userMessage.contains("hello") || userMessage.contains("hi")) {
-      reply = "Hello! How can I assist you today?";
-    } else if (userMessage.contains("help")) {
-      reply = "Sure! Tell me what issue you're facing.";
-    } else if (userMessage.contains("doctor")) {
-      reply = "I can help you find nearby hospitals or book a teleconsultation.";
-    } else if (userMessage.contains("thanks") || userMessage.contains("thank you")) {
-      reply = "You're welcome! 😊";
-    }
-     else if (userMessage.contains("i have headache")) {
-      reply = "Sure! use paracetamol 500mg for headache. If it persists, consult a doctor.";
-    }else if (userMessage.contains("i have fever")) {
-      reply = "Sure! use nisib cold and flue for fever. If it persists, consult a doctor.";
-    } else if (userMessage.contains("i have cold")) {
-      reply = "Sure! use paracetamol use nishib cold and fluefor cold. If it persists, consult a doctor.";
-    } else if (userMessage.contains("i have cough")) {
-      reply = "Sure! so suck a dik in mouth for cough. If possible try to give you dick in addi named boys mouth.";
-    }
-    else if (userMessage.contains("i have type 2 diabetes")) {
-      reply = "Sure! use Metformin, Insulin. If it persists consult a doctor";
-    }
-    else if (userMessage.contains("i have hypertension")) {
-      reply = "Sure! use ACE inhibitors, calcium channel blocker. If it persists , consult a doctor.";
-    }
-    else if (userMessage.contains("i have tuberculosis")) {
-      reply = "Sure! use Isoniazid, rifampicin, pyrazinamide or ethambutol. If it persists , consult a doctor.";
-    }
-     else if (userMessage.contains("i have malaria ")) {
-      reply = "Sure! use Artemisinin combination therapies. If it persists , consult a doctor.";
-    }
-    else if (userMessage.contains("i have typhoid ")) {
-      reply = "Sure! use Azithromycin or ceftriaxone, . If it persists , consult a doctor.";
-    }
-     else if (userMessage.contains("i have dengue ")) {
-      reply = "Sure! use Supportive care (fluids, paracetamol) . If it persists , consult a doctor.";
-    }
-     else if (userMessage.contains("i have HIV/ AIDS")) {
-      reply = "Sure! use Azithromycin, ceftriaxone, or fluoroquinolones . If it persists , consult a doctor.";
-    }
-    else if (userMessage.contains("i have influenza")) {
-      reply = "Sure! use  . If it persists , consult a doctor.";
-    }
-     else {
-      reply = "I didn’t fully understand, but I’m here to help!";
-    }
-    
-    setState(() {
-      _messages.add({"sender": "bot", "text": reply});
-    });
+  userMessage = userMessage.toLowerCase();
+
+  if (userMessage.contains("hello") || userMessage.contains("hi")) {
+    reply = "Hello! How can I assist you today?";
+  } else if (userMessage.contains("help")) {
+    reply = "Sure! Tell me what issue you're facing.";
+  } else if (userMessage.contains("doctor")) {
+    reply = "I can help you find nearby hospitals or book a teleconsultation.";
+  } else if (userMessage.contains("thanks") || userMessage.contains("thank you")) {
+    reply = "You're welcome! 😊";
+  } else if (userMessage.contains("i have headache")) {
+    reply = "You can take Paracetamol 500mg. If it persists, please consult a doctor.";
+  } else if (userMessage.contains("i have fever")) {
+    reply = "You may use paracetamol and stay hydrated. If the fever continues, visit a doctor.";
+  } else if (userMessage.contains("i have cold")) {
+    reply = "Try steam inhalation and warm fluids. If it doesn't improve, consult a doctor.";
+  } else if (userMessage.contains("i have cough")) {
+    reply = "Warm water, honey, and steam may help. If the cough persists, consult a doctor.";
+  } else if (userMessage.contains("i have type 2 diabetes")) {
+    reply = "Metformin is commonly prescribed. Please follow your doctor's advice.";
+  } else if (userMessage.contains("i have hypertension")) {
+    reply = "ACE inhibitors and lifestyle changes may help. Consult your physician.";
+  } else if (userMessage.contains("i have tuberculosis")) {
+    reply = "Treatment includes isoniazid, rifampicin, etc. Please follow medical supervision.";
+  } else if (userMessage.contains("i have malaria")) {
+    reply = "Artemisinin combination therapies are commonly used. Visit a hospital immediately.";
+  } else if (userMessage.contains("i have typhoid")) {
+    reply = "Azithromycin or ceftriaxone may help. Seek medical care urgently.";
+  } else if (userMessage.contains("i have dengue")) {
+    reply = "Take rest, stay hydrated, and use paracetamol. Avoid NSAIDs. Consult a doctor if symptoms worsen.";
+  } else if (userMessage.contains("i have hiv") || userMessage.contains("i have aids")) {
+    reply = "Only ART treatment under a doctor’s supervision is recommended.";
+  } else if (userMessage.contains("i have influenza")) {
+    reply = "Get rest, fluids, and fever medication. If breathing issues occur, seek care.";
+  } else {
+    reply = "I didn’t fully understand, but I’m here to help!";
   }
+
+  setState(() {
+    _messages.add({"sender": "bot", "text": reply});
+  });
+}
+
 
   @override
   Widget build(BuildContext context) {
