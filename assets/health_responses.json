@@ -130,7 +130,8 @@
     "response": "For common cold, you can take Sinarest tablets 1 tablet twice daily after meals and drink warm fluids. Use saline nasal drops for relief. If symptoms persist beyond 7 days or include high fever, consult a doctor."
   },
   {
-    "patterns": ["i have a cough", "i keep coughing", "chest is itchy", "persistent cough"],
+    "patterns": ["i have a cough", 
+    "i keep coughing", "chest is itchy", "persistent cough"],
     "response": "You can take Benadryl 10 ml syrup 2 times a day or Ascoril 10 ml syrup 3 times a day after meals. Keep hydrated and avoid cold air. If cough persists beyond 2 weeks, produces blood, or you experience breathlessness, see a doctor."
   },
   {
@@ -150,7 +151,7 @@
     "response": "You can take Rantac 150 mg once daily before meals and Digene tablets as needed. Avoid spicy and oily foods. If symptoms persist for more than a week or worsen, consult a doctor."
   },
   {
-    "patterns": ["diarrhea", "loose motions", "stomach upset", "frequent stools"],
+    "patterns": ["diiarrhea", "loose motions", "stomach upset", "frequent stools"],
     "response": "Take ORS solution regularly to stay hydrated and use Ciprofloxacin 500 mg once daily for 3 days if prescribed by a doctor. Avoid oily and junk food. If diarrhea is severe, bloody, or accompanied by high fever, seek medical attention immediately."
   },
   {
