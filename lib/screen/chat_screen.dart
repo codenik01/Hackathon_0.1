@@ -1,4 +1,10 @@
+import 'dart:convert';
+
+import 'package:care_plus/AI_Model/custom_responses.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -9,6 +15,31 @@ class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _messageController = TextEditingController();
   final List<Map<String, dynamic>> _messages = []; 
   bool _isTyping = false;
+  List<Map<String, dynamic>> _responseData = [];
+
+  stt.SpeechToText? _speech;
+
+bool _isListening = false;
+
+
+
+  @override
+void initState() {
+  super.initState();
+  _loadResponses();
+  _loadChatHistory();
+  _speech = stt.SpeechToText();
+  
+
+}
+
+
+Future<void> _loadResponses() async {
+  String data = await rootBundle.loadString('assets/health_responses.json');
+  setState(() {
+    _responseData = List<Map<String, dynamic>>.from(jsonDecode(data));
+  });
+}
 
   void _sendMessage() {
     final text = _messageController.text.trim();
@@ -29,55 +60,90 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  void _botReply(String userMessage) {
-    String reply;
-    String msg = userMessage.toLowerCase();
+void _botReply(String userMessage) {
+  String msg = userMessage.toLowerCase();
+  String reply = "I'm not sure. Please consult a healthcare professional.";
 
-    if (msg.contains("hello") || msg.contains("hi")) {
-      reply = "Hello! How can I assist you today?";
-    } else if (msg.contains("help")) {
-      reply = "Sure! Tell me what issue you're facing.";
-    } else if (msg.contains("doctor")) {
-      reply = "I can help you find nearby hospitals or book a teleconsultation.";
-    } else if (msg.contains("thanks") || msg.contains("thank you")) {
-      reply = "You're welcome! 😊";
-    } else if (msg.contains("i have headache")) {
-      reply = "You may consider paracetamol 500 mg for headache. If it persists, consult a doctor.";
-    } else if (msg.contains("i have fever")) {
-      reply = "You may use a fever-reducing medicine like paracetamol. If it persists, consult a doctor.";
-    } else if (msg.contains("i have cold")) {
-      reply = "Rest, warm fluids, and OTC cold remedies can help. If it persists, see a doctor.";
-    } else if (msg.contains("i have cough")) {
-      reply = "You might try a suitable cough syrup. If symptoms worsen, consult a doctor.";
-    } else if (msg.contains("i have type 2 diabetes")) {
-      reply = "Common medicines include metformin and insulin. Please consult a doctor for specifics.";
-    } else if (msg.contains("i have hypertension")) {
-      reply = "Medicines like ACE inhibitors or calcium channel blockers may be used. Please consult your physician.";
-    } else if (msg.contains("i have tuberculosis")) {
-      reply = "Standard treatment includes isoniazid, rifampicin, pyrazinamide, and ethambutol.";
-    } else if (msg.contains("i have malaria")) {
-      reply = "Artemisinin combination therapies are commonly used. Please consult a doctor.";
-    } else if (msg.contains("i have typhoid")) {
-      reply = "Azithromycin or ceftriaxone may be used depending on local resistance.";
-    } else if (msg.contains("i have dengue")) {
-      reply = "Supportive care (fluids, rest, paracetamol) is recommended. Avoid NSAIDs due to bleeding risk.";
-    } else if (msg.contains("i have hiv") || msg.contains("i have aids")) {
-      reply = "Antiretroviral therapy is used for HIV/AIDS. Please consult a specialist.";
-    } else if (msg.contains("i have influenza")) {
-      reply = "Antivirals (like oseltamivir) may be used in severe cases. See a doctor.";
-    } else {
-      reply = "I’m sorry, I didn’t fully understand. I’m not a doctor — please consult a healthcare professional.";
+  for (var item in _responseData) {
+    List patterns = item["patterns"];
+    for (var pattern in patterns) {
+      if (msg.contains(pattern.toLowerCase())) {
+        reply = item["response"];
+        break;
+      }
     }
+  }
 
+  setState(() {
+    _isTyping = false;
+    _messages.add({
+      "sender": "bot",
+      "text": reply,
+      "time": DateTime.now(),
+    });
+  });
+
+  _saveChatHistory(); // Coming in next step
+}
+
+
+Future<void> _saveChatHistory() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  List<String> chatList = _messages
+      .map((msg) => jsonEncode({
+            "sender": msg["sender"],
+            "text": msg["text"],
+            "time": msg["time"].toString(),
+          }))
+      .toList();
+  await prefs.setStringList("chatHistory", chatList);
+}
+
+Future<void> _loadChatHistory() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  List<String>? chatList = prefs.getStringList("chatHistory");
+  if (chatList != null) {
     setState(() {
-      _isTyping = false;
-      _messages.add({
-        "sender": "bot",
-        "text": reply,
-        "time": DateTime.now(),
-      });
+      _messages.clear();
+      _messages.addAll(chatList.map((item) => {
+            "sender": jsonDecode(item)["sender"],
+            "text": jsonDecode(item)["text"],
+            "time": DateTime.parse(jsonDecode(item)["time"]),
+          }));
     });
   }
+}
+
+void _startListening() async {
+  if (_speech == null) return;
+
+  bool available = await _speech!.initialize(
+    onStatus: (val) => print('Status: $val'),
+    onError: (val) => print('Error: $val'),
+  );
+
+  if (!available) return;
+
+  setState(() => _isListening = true);
+
+  _speech!.listen(
+    onResult: (val) {
+      setState(() {
+        _messageController.text = val.recognizedWords;
+      });
+    },
+  );
+}
+
+
+
+void _stopListening() {
+  setState(() => _isListening = false);
+  _speech!.stop();
+}
+
+
+
 
   Widget _buildBubble(Map<String, dynamic> msg) {
     bool isUser = msg["sender"] == "user";
@@ -190,33 +256,44 @@ class _ChatScreenState extends State<ChatScreen> {
               color: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      controller: _messageController,
-                      decoration: InputDecoration(
-                        hintText: "Type your message...",
-                        contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(color: Colors.grey.shade300),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  ElevatedButton(
-                    onPressed: _sendMessage,
-                    child: Text("Send"),
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-                    ),
-                  ),
-                ],
-              ),
+  children: [
+    IconButton(
+      icon: Icon(_isListening ? Icons.mic : Icons.mic_none),
+      onPressed: () {
+        if (_isListening) {
+          _stopListening();
+        } else {
+          _startListening();
+        }
+      },
+    ),
+    Expanded(
+      child: TextField(
+        controller: _messageController,
+        decoration: InputDecoration(
+          hintText: "Type or speak your message...",
+          contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.grey.shade300),
+          ),
+        ),
+      ),
+    ),
+    SizedBox(width: 8),
+    ElevatedButton(
+      onPressed: _sendMessage,
+      child: Text("Send"),
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+      ),
+    ),
+  ],
+)
+
             ),
           ],
         ),

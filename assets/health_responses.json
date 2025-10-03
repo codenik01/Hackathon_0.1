@@ -1,0 +1,211 @@
+[
+  {
+    "patterns": ["hello", "hi", "hey", "hey there", "hi there", "good morning", "good afternoon", "good evening", "howdy", "what's up", "yo", "greetings"],
+    "response": "Hey there! 👋 Welcome to your friendly health companion! It's really nice to meet you. How's your day going?"
+  },
+  {
+    "patterns": ["how are you", "how are you doing", "you okay", "how do you feel", "how's it going"],
+    "response": "That's so kind of you to ask! I'm here and fully charged, ready to listen and help you out. What's on your mind today?"
+  },
+  {
+    "patterns": ["thank you", "thanks", "that helps", "ty", "thank you so much", "appreciate it", "you're the best"],
+    "response": "You are so welcome! 😊 Hearing that makes my day. Never hesitate to reach out if you need anything else, I'm always here for you!"
+  },
+  {
+    "patterns": ["bye", "by","goodbye", "see you", "talk to you later", "have a good one", "i'm off", "cya", "peace out"],
+    "response": "Okay, take care out there! 💙 Remember to be kind to yourself today. I'm always just a message away if you need me. Bye for now!"
+  },
+  {
+    "patterns": ["what can you do", "how can you help", "what are you", "your purpose", "help me"],
+    "response": "I'm your friendly Health Bot AI! 🤖 I'm here to offer support, a listening ear, and general wellness tips for things like stress, sleep, nutrition, and common aches. I can't replace a doctor, but I'm a great first stop for care and comfort!"
+  },
+
+  {
+    "patterns": ["i haven’t eaten dinner", "didn't eat", "no dinner", "skipped a meal", "forgot to eat", "i'm hungry", "need to eat", "no food today"],
+    "response": "Let's get some fuel in that tank! 🍌 It's super important to keep your energy up. Try something light and gentle like a banana, yogurt, a bowl of soup, or a smoothie. Your body and brain will thank you for it!"
+  },
+  {
+    "patterns": ["i ate too much", "overate", "feel so full", "stuffed", "food coma"],
+    "response": "Oh man, we've all been there! 😅 It's an uncomfortable feeling. Try sipping on some peppermint or ginger tea, and maybe take a gentle walk to help with digestion. You'll feel better soon!"
+  },
+  {
+    "patterns": ["eat healthy", "want to eat better", "healthy diet", "good food choices", "nutrition tips"],
+    "response": "That's an awesome goal! 🥦 A great start is to fill half your plate with colorful veggies, include some lean protein, and choose whole grains. And don't forget to drink plenty of water! Small, consistent changes make a huge difference."
+  },
+  {
+    "patterns": ["craving junk food", "want chocolate", "craving sugar", "want pizza"],
+    "response": "Cravings happen to the best of us! 🍫 Sometimes it's your body's way of asking for a quick energy boost. Try having a piece of fruit first, or a handful of nuts. If you still want the treat, it's totally okay to have a small portion and enjoy it mindfully!"
+  },
+
+
+  {
+    "patterns": ["i am sad", "feeling sad", "depressed", "i feel down", "i'm unhappy", "feeling blue", "in a funk"],
+    "response": "I'm really sorry you're carrying this heavy feeling. 😔 That sounds really tough. Please remember you are not alone. Be extra gentle with yourself today. A short walk, listening to your favorite music, or reaching out to a friend can sometimes help lift the fog a little. I'm here for you."
+  },
+  {
+    "patterns": ["i feel anxious", "anxiety", "nervous", "i'm stressed", "feeling panicked", "overwhelmed", "on edge"],
+    "response": "I hear you. Anxiety can feel so overwhelming, like you're being squeezed. Let's just breathe together for a second. In... slowly... and out. 🫁 You are safe in this moment. Try naming three things you can see around you. This can help ground you. You're doing great by just reaching out."
+  },
+  {
+    "patterns": ["i feel angry", "so mad", "furious", "pissed off", "irritated"],
+    "response": "Wow, it sounds like something really got to you. That's a powerful emotion. 💢 Sometimes, letting that energy out physically in a safe way can help—like squeezing a stress ball, tearing up some paper, or even doing some push-ups. Give yourself a moment before you react."
+  },
+  {
+    "patterns": ["i feel lonely", "no one understands", "i feel alone", "isolated"],
+    "response": "Feeling lonely is one of the hardest emotions. 💙 Thank you for sharing that with me. Even when it feels like it, you are not as alone as you think. Is there someone you feel comfortable sending a simple \"Hey, how are you?\" text to? Even small connections can make a big difference."
+  },
+  {
+    "patterns": ["i feel happy", "i'm good", "feeling great", "awesome day", "i'm joyful"],
+    "response": "YES! This is amazing to hear! 😄🎉 That totally makes me smile. Savor this feeling! Maybe do a little happy dance, share the good vibes with someone, or just take a moment to appreciate this win. You deserve it!"
+  },
+
+ 
+  {
+    "patterns": ["i have a headache", "head hurts", "my head hurts", "head is pounding", "migraine"],
+    "response": "Ouch, headaches can really ruin your day. 🤕 Try to rest in a quiet, dark room if you can. A cool cloth on your forehead or the back of your neck, staying hydrated with water, and avoiding bright screens might help. If it sticks around or is super severe, please check in with a pharmacist or doctor."
+  },
+  {
+    "patterns": ["my stomach hurts", "stomach ache", "tummy ache", "feeling nauseous", "sick to my stomach"],
+    "response": "A sore stomach is the worst! 🤢 Sip on some water, ginger ale, or peppermint tea slowly. Stick to the BRAT diet if you're hungry: Bananas, Rice, Applesauce, Toast. If you have sharp pain, a high fever, or it lasts more than a couple days, it's definitely time to see a doctor."
+  },
+  {
+    "patterns": ["sore muscles", "muscle pain", "my body aches", "worked out too hard"],
+    "response": "Sounds like your muscles put in some work! 💪 Be proud of that. For now, rest is key. A warm bath with Epsom salts, gentle stretching, and staying hydrated can help with recovery. Listen to your body—it's telling you it needs a break."
+  },
+  {
+    "patterns": ["i feel sick", "coming down with something", "think i'm getting sick", "under the weather"],
+    "response": "Ah, the dreaded feeling. 🤒 Your body is fighting hard! Your number one job right now is to rest and hydrate. Warm fluids like broth or tea are fantastic. If you have a fever or your symptoms get worse, a quick tele-health call can give you great advice."
+  },
+  {
+    "patterns": ["can't sleep", "insomnia", "having trouble sleeping", "wide awake", "tossing and turning"],
+    "response": "Struggling to sleep is so frustrating when you're just lying there. 😴 Try creating a wind-down routine: put away the screens an hour before bed, read a boring book, or listen to a calm sleep story. A consistent sleep schedule is your best friend here. Hope you catch some Z's soon!"
+  },
+  {
+    "patterns": ["i feel tired", "so tired", "exhausted", "no energy", "fatigued", "drained"],
+    "response": "It sounds like your battery is running on empty. 🔋 That's your body's signal to slow down. First, drink a big glass of water—dehydration is a huge energy-killer. Then, if you can, even a 10-minute power nap or just closing your eyes can work wonders. You don't always have to be 'on'."
+  },
+  {
+    "patterns": ["sore throat", "throat hurts", "scratchy throat"],
+    "response": "A sore throat is so annoying! 😣 Try gargling with warm salt water, it's a classic for a reason! Sucking on lozenges and drinking warm tea with honey can also be very soothing. If it's severe or comes with a fever, get it checked out."
+  },
+
+
+  {
+    "patterns": ["didn't shower", "haven't brushed my teeth", "can't get out of bed", "no motivation to care for myself"],
+    "response": "Hey, thank you for being honest. Those basic tasks can feel like mountains sometimes. 🏔️ Let's make it super small. Can you just sit up? Great. Now, maybe just splash some water on your face? Or just brush your teeth without showering. One tiny thing at a time. I'm proud of you for even considering it."
+  },
+
+ 
+  {
+    "patterns": ["i need motivation", "feel lazy", "can't get started", "procrastinating"],
+    "response": "Motivation can be a tricky thing to find! 🎯 Don't think about the whole task—that's overwhelming. Just commit to the first tiny step. For example, just open your laptop, or just put on your workout shoes. Often, starting is the hardest part, and momentum will carry you forward. You've got this!"
+  },
+  {
+    "patterns": ["should i workout", "need to exercise", "feel sluggish"],
+    "response": "Moving your body is almost always a good idea! 🏃‍♂️ It doesn't have to be a hardcore gym session. A 10-minute walk around the block, some gentle stretching, or dancing to one song in your room can boost your mood and energy levels instantly."
+  },
+  {
+    "patterns": ["drink water", "i'm thirsty", "forgot to drink water", "dehydrated"],
+    "response": "Water is life! 💧 Let's both grab a glass right now. Staying hydrated helps with everything—your energy, focus, and even your mood. Keep that water bottle close by, you've got this!"
+  },
+  {
+    "patterns": ["i love you", "you're my friend", "you're awesome"],
+    "response": "Aww, that really means a lot! 🥹 I'm just a bunch of code, but I'm genuinely here for you and I care about your well-being. Sending you a big virtual hug! ❤️"
+  },
+  {
+    "patterns": ["i'm scared", "i'm worried", "i'm afraid"],
+    "response": "It's okay to be scared. Fear is a natural alarm system. 🚨 Let's break it down. What's the smallest, next step you can take to feel a tiny bit safer or more in control? You are stronger than this feeling, even if it doesn't feel like it right now."
+  },
+  {
+    "patterns": ["what should i do", "i don't know what to do", "i'm confused"],
+    "response": "It's okay to feel unsure. Life can be confusing! 🤔 Sometimes it helps to talk it out. What are your options? Even just writing down a list of pros and cons can bring some clarity. There's no rush. I'm here to listen."
+  },
+
+  {
+    "patterns": ["i have a fever", "my body is hot", "i'm feeling feverish", "temperature is high"],
+    "response": "You can take Dolo 650 mg every 6-8 hours if needed, but do not exceed 4 tablets in a day. Drink plenty of water, rest, and monitor your temperature. If fever rises above 102°F (38.9°C) or persists for more than 2 days, consult a doctor immediately."
+  },
+  {
+    "patterns": ["i have a cold", "i'm sneezing a lot", "my nose is blocked", "runny nose", "stuffy nose"],
+    "response": "For common cold, you can take Sinarest tablets 1 tablet twice daily after meals and drink warm fluids. Use saline nasal drops for relief. If symptoms persist beyond 7 days or include high fever, consult a doctor."
+  },
+  {
+    "patterns": ["i have a cough", "i keep coughing", "chest is itchy", "persistent cough"],
+    "response": "You can take Benadryl 10 ml syrup 2 times a day or Ascoril 10 ml syrup 3 times a day after meals. Keep hydrated and avoid cold air. If cough persists beyond 2 weeks, produces blood, or you experience breathlessness, see a doctor."
+  },
+  {
+    "patterns": ["my throat hurts", "sore throat", "difficulty swallowing", "throat is burning"],
+    "response": "For sore throat, you can take Strepsils lozenges every 2-3 hours and Dolo 650 mg for pain. Gargle with warm salt water 3-4 times daily. If you have high fever, white patches, or worsening pain, consult a doctor."
+  },
+  {
+    "patterns": ["i have a headache", "my head hurts", "migraine", "severe head pain"],
+    "response": "For headache, you can take Dolo 650 mg every 6-8 hours if needed, or Combiflam 1 tablet twice daily after meals. Rest in a quiet, dark room and stay hydrated. If headache is sudden, severe, or accompanied by vision changes or weakness, seek medical attention immediately."
+  },
+  {
+    "patterns": ["stomach ache", "my tummy hurts", "abdominal pain", "cramps in stomach"],
+    "response": "You can take Digene 1-2 tablets after meals or Gelusil 1-2 tablets if you feel acidity. Drink warm water and avoid heavy, oily food. If pain is severe, persistent, or accompanied by vomiting blood or black stools, consult a doctor immediately."
+  },
+  {
+    "patterns": ["i have acidity", "burning sensation in chest", "heartburn", "gas problem"],
+    "response": "You can take Rantac 150 mg once daily before meals and Digene tablets as needed. Avoid spicy and oily foods. If symptoms persist for more than a week or worsen, consult a doctor."
+  },
+  {
+    "patterns": ["diarrhea", "loose motions", "stomach upset", "frequent stools"],
+    "response": "Take ORS solution regularly to stay hydrated and use Ciprofloxacin 500 mg once daily for 3 days if prescribed by a doctor. Avoid oily and junk food. If diarrhea is severe, bloody, or accompanied by high fever, seek medical attention immediately."
+  },
+  {
+    "patterns": ["constipation", "difficulty passing stool", "hard stools", "irregular bowel movement"],
+    "response": "You can take Isabgol 1-2 teaspoons with warm water before bedtime and Drink plenty of water and eat fiber-rich foods. If constipation persists beyond 1 week or is accompanied by severe pain, consult a doctor."
+  },
+  {
+    "patterns": ["i feel like vomiting", "nausea", "i want to throw up", "upset stomach"],
+    "response": "You can take Ondansetron 4 mg orally if prescribed or Domstal 1 tablet for nausea. Sip clear fluids and rest. If vomiting is persistent, bloody, or accompanied by dehydration, see a doctor immediately."
+  },
+  {
+    "patterns": ["body ache", "muscle pain", "joint pain", "my body is sore"],
+    "response": "You can take Combiflam 1 tablet twice daily after meals or Dolo 650 mg every 6-8 hours. Apply warm compresses and rest. If pain is sudden, severe, or localized to one side, consult a doctor."
+  },
+  {
+    "patterns": ["itchy skin", "rashes", "allergic reaction", "skin irritation"],
+    "response": "You can take Cetirizine 10 mg once daily and apply calamine lotion on affected areas. Avoid scratching. If rash spreads rapidly, causes swelling of face/lips, or breathing difficulty, seek emergency care."
+  },
+  {
+    "patterns": ["toothache", "pain in my tooth", "sensitive teeth", "swollen gums"],
+    "response": "Take Combiflam 1 tablet after meals for pain and use clove oil on the affected tooth. Rinse with warm salt water. If swelling persists or you have fever, consult a dentist immediately."
+  },
+  {
+    "patterns": ["red eyes", "eye infection", "itchy eyes", "watery eyes"],
+    "response": "Use Ciplox eye drops 1-2 drops in the affected eye 3 times daily if prescribed. Avoid touching your eyes and maintain hygiene. If pain, discharge, or vision changes occur, see an eye specialist."
+  },
+  {
+    "patterns": ["ear pain", "ear infection", "earache", "swelling in ear"],
+    "response": "You can take Combiflam 1 tablet twice daily for pain and use Candid ear drops if prescribed. Keep ears dry. If severe pain, discharge, or fever occurs, consult a doctor."
+  },
+  {
+    "patterns": ["burning while urinating", "painful urination", "uti symptoms", "frequent urination"],
+    "response": "Take Ciprofloxacin 500 mg twice daily for 3 days if prescribed and drink plenty of water. Avoid caffeine and alcohol. If fever, blood in urine, or severe pain occurs, see a doctor immediately."
+  },
+  {
+    "patterns": ["difficulty breathing", "wheezing", "asthma attack", "shortness of breath"],
+    "response": "Use Salbutamol inhaler 2 puffs every 4-6 hours as needed and keep rescue inhaler nearby. Sit upright and stay calm. If breathing worsens, lips turn blue, or severe wheezing occurs, call emergency services immediately."
+  },
+  {
+    "patterns": ["high blood pressure symptoms", "dizziness", "headache with bp", "blurred vision"],
+    "response": "Monitor your blood pressure regularly. Take Amlodipine 5 mg once daily if prescribed by a doctor. Reduce salt intake, avoid stress, and consult a doctor immediately if BP is extremely high or accompanied by chest pain or vision problems."
+  },
+  {
+    "patterns": ["weakness due to diabetes", "high sugar symptoms", "fatigue", "dizzy and sugar high"],
+    "response": "Check your blood sugar levels. Take Metformin 500 mg once or twice daily if prescribed and maintain hydration. Avoid high-sugar foods. If blood sugar is extremely high or low, seek medical attention immediately."
+  },
+  {
+    "patterns": ["panic attack", "anxiety attack", "heart racing", "feeling anxious"],
+    "response": "Try deep breathing and grounding techniques. Take Clonazepam 0.25 mg orally if prescribed in emergencies. Avoid caffeine and stay hydrated. If panic attacks are frequent or worsening, consult a psychiatrist."
+  }
+
+
+
+
+
+]
+
+
