@@ -201,9 +201,1848 @@
   {
     "patterns": ["panic attack", "anxiety attack", "heart racing", "feeling anxious"],
     "response": "Try deep breathing and grounding techniques. Take Clonazepam 0.25 mg orally if prescribed in emergencies. Avoid caffeine and stay hydrated. If panic attacks are frequent or worsening, consult a psychiatrist."
+  },
+    {
+    "patterns": ["fever", "high temperature", "chills", "shivering"],
+    "response": "Keep hydrated, rest, take antipyretics like paracetamol or ibuprofen. If fever exceeds 39°C (102°F), lasts more than 3 days, or is accompanied by stiff neck, rash, breathing issues, or neurological symptoms, consult a doctor."
+  },
+  {
+    "patterns": ["cough", "productive cough", "dry cough", "persistent cough"],
+    "response": "Use cough suppressant or expectorant depending on type; drink warm fluids; rest voice; avoid irritants like smoke. If cough persists >2 weeks, produces blood, or you have breathlessness, see a pulmonologist or ENT."
+  },
+  {
+    "patterns": ["shortness of breath", "difficulty breathing", "wheezing", "chest tightness"],
+    "response": "Sit upright, calm breathing, use prescribed inhaler if asthma or COPD. Avoid allergens, smoke. If you're having blue lips, severe distress, or breathing gets much worse quickly, get emergency care."
+  },
+  {
+    "patterns": ["chest pain", "pressure in chest", "aching chest", "pain radiating to arm/jaw"],
+    "response": "Stop activity, rest, take aspirin if appropriate. If pain is severe, lasts more than a few minutes, radiates, or is with sweating / shortness of breath, call emergency services."
+  },
+  {
+    "patterns": ["abdominal pain", "stomach ache", "cramps in belly", "pain after eating"],
+    "response": "Avoid heavy or irritating foods; try bland diet; use over-the-counter antacids or gas relief. If pain is very severe, with fever, vomiting, blood, or in pregnancy, seek doctor."
+  },
+  {
+    "patterns": ["nausea", "vomiting", "queasy feeling", "retching"],
+    "response": "Sip small amounts of clear fluids, try bland foods, rest. If vomiting is frequent, causes dehydration, has blood, or persists over 24-48 hrs, see medical help."
+  },
+  {
+    "patterns": ["diarrhea", "loose stools", "frequent bowel movements", "watery stool"],
+    "response": "Maintain hydration (electrolytes), light diet (bananas, rice, toast). Avoid dairy and spicy food. If there’s blood, high fever, or signs of dehydration, see a doctor."
+  },
+  {
+    "patterns": ["constipation", "infrequent stools", "hard stools", "straining to pass stool"],
+    "response": "Increase fiber, drink water, do mild exercise. Use stool softeners if needed. If constipation persists for more than a week or is associated with abdominal distension or pain, consult care provider."
+  },
+  {
+    "patterns": ["heartburn", "acid reflux", "burning in chest", "taste of acid in throat"],
+    "response": "Avoid spicy, fatty foods; eat smaller meals; don’t lie down soon after eating; use antacids or acid suppressants. If frequent, worsens, or there is weight loss or swallowing difficulty, see a gastroenterologist."
+  },
+  {
+    "patterns": ["bloating", "gas", "feeling full", "belching", "flatulence"],
+    "response": "Reduce foods that cause gas (beans, carbonated drinks), eat slowly, avoid chewing gum, try over-the-counter digestive enzymes. If persistent or accompanied by weight loss or blood in stool, investigate."
+  },
+  {
+    "patterns": ["urinary frequency", "burning urination", "painful urination", "cloudy urine"],
+    "response": "Drink plenty of water; urinate often; apply heat if needed. If pain is severe, fever present, or symptoms worsen in 24-48 hrs, get tested for UTI and see a urologist."
+  },
+  {
+    "patterns": ["blood in urine", "pink urine", "red urine", "dark urine"],
+    "response": "Stop strenuous exercise, check hydration, avoid medications or foods that discolor urine. If persists, has pain or is frequent, see medical evaluation for kidney or bladder issues."
+  },
+  {
+    "patterns": ["swelling", "edema", "puffy ankles", "swollen legs"],
+    "response": "Elevate legs, reduce salt, wear compression stockings. If swelling is sudden, painful, asymmetric, or with shortness of breath, see emergency or vascular specialist."
+  },
+  {
+    "patterns": ["weight loss", "unintentional weight loss", "reduced appetite", "wasting"],
+    "response": "Track meals, increase nutrient-dense foods, check for underlying causes (infection, metabolic disease, cancer). If weight loss is >5% body weight over short time or with other alarming signs, seek medical assessment."
+  },
+  {
+    "patterns": ["weight gain", "sudden weight gain", "bloating", "fluid retention"],
+    "response": "Review diet, salt intake; check for hormonal causes (thyroid, cortisol), heart or kidney issues. If weight gain is rapid or associated with swelling, shortness of breath, see doctor."
+  },
+  {
+    "patterns": ["fatigue", "tiredness", "low energy", "exhaustion"],
+    "response": "Ensure good sleep, balanced diet, hydration. Rule out anemia, thyroid, sleep disorders. If fatigue is severe, doesn’t improve with rest, or has other symptoms like night sweats or weight loss, see physician."
+  },
+  {
+    "patterns": ["weakness", "loss of muscle strength", "difficulty lifting objects", "limb weakness"],
+    "response": "Rest and gentle activity; check for electrolyte imbalance or neurological issues. If weakness is sudden, asymmetric, or with numbness, see neurology."
+  },
+  {
+    "patterns": ["dizziness", "lightheadedness", "vertigo", "feeling faint"],
+    "response": "Sit/lie down when feeling faint; drink water, avoid rapid posture changes. If dizziness is severe, lasts long, or comes with hearing loss or visual changes, see an ENT or neurologist."
+  },
+  {
+    "patterns": ["headache", "throbbing headache", "pressure in head", "migraine aura"],
+    "response": "Rest in quiet/dark place, use OTC pain relief, avoid triggers (strong smells, loud noise, bright lights). If headaches are new, severe, with neurological symptoms (vision changes, weakness), see specialist."
+  },
+  {
+    "patterns": ["blurred vision", "double vision", "seeing spots", "floaters"],
+    "response": "Rest eyes, use eye drops, reduce screen time. If vision loss, flashes, or sudden double vision occur, seek ophthalmologist immediately."
+  },
+  {
+    "patterns": ["hearing loss", "ringing in ears (tinnitus)", "ear pain", "fullness in ear"],
+    "response": "Avoid loud noise; see ENT; check for earwax blockage. If sudden hearing loss, discharge, or pain, get medical advice."
+  },
+  {
+    "patterns": ["sore throat", "pain when swallowing", "scratchy throat", "swollen tonsils"],
+    "response": "Gargle warm salt water; rest voice; use lozenges or pain relief. If throat swelling blocks breathing, has high fever, or lasts more than a week, see ENT."
+  },
+  {
+    "patterns": ["mouth ulcers", "sores inside mouth", "bleeding gums", "swollen gums"],
+    "response": "Maintain oral hygiene; avoid spicy/hot foods; use topical antiseptics. If ulcers are persistent, recurring, large, or bleed heavily, see dentist or doctor."
+  },
+  {
+    "patterns": ["joint pain", "swelling of joints", "stiffness in joints", "pain worsened in morning"],
+    "response": "Rest joint, apply ice/heat, gentle movement; use NSAIDs if needed; maintain healthy weight. If pain is severe, swelling very large, or joint is red/hot with fever, see a rheumatologist or orthopedist."
+  },
+  {
+    "patterns": ["muscle pain", "myalgia", "soreness", "muscle ache"],
+    "response": "Rest, mild stretching, hydration, massage. If muscle pain is severe, with dark urine, weakness, swelling, or prolonged, get medical evaluation."
+  },
+  {
+    "patterns": ["numbness", "tingling", "pins and needles", "loss of sensation"],
+    "response": "Check posture, avoid compression of nerves; consider vitamin deficiency. If numbness is sudden, covers large area, is asymmetric, or occurs with weakness, seek neurology."
+  },
+  {
+    "patterns": ["itching", "pruritus", "skin irritation", "scratchiness"],
+    "response": "Use mild, fragrance-free moisturizers, cool baths, topical anti-itch creams or antihistamines. If skin is broken, infected, or itching is widespread or ongoing, see dermatologist."
+  },
+  {
+    "patterns": ["rash", "red patches", "bumps on skin", "skin discoloration"],
+    "response": "Keep area clean, avoid scratch, use over-the-counter soothing creams; observe if spreading. If rash is blistering, painful, accompanied by fever or difficulty breathing, seek medical care."
+  },
+  {
+    "patterns": ["bleeding", "bruises", "easy bruising", "blood in stool or urine"],
+    "response": "Avoid trauma; ensure adequate nutrition (iron, vitamins); monitor closely. If bleeding is heavy, unexplained, or persistent, or if bruises appear without known injury, see hematology or general doctor."
+  },
+  {
+    "patterns": ["nosebleed", "bloody nose", "frequent nose bleeds", "dripping blood from nose"],
+    "response": "Lean forward, pinch nose, apply ice; avoid blowing nose harshly. If nosebleeds are frequent or heavy, or you take blood thinners, see doctor."
+  },
+  {
+    "patterns": ["dry mouth", "sticky mouth", "difficulty swallowing liquids", "bad taste"],
+    "response": "Sip water, ice chips; chew sugar-free gum; avoid very dry or spicy food. If this persists or you have swallowing difficulty, see ENT / dentist."
+  },
+  {
+    "patterns": ["dry eyes", "burning eyes", "scratchy eyes", "tearing"],
+    "response": "Use artificial tears, blink often, reduce screen glare, ensure proper lighting; consider eyewear protections. If vision is affected or pain is severe, consult ophthalmology."
+  },
+  {
+    "patterns": ["insomnia", "difficulty sleeping", "waking up at night", "restless sleep"],
+    "response": "Keep regular sleep schedule, reduce screens before bed, avoid caffeine late. Try relaxation or meditation. If insomnia persists for weeks and affects daily functioning, see a sleep specialist or psychiatrist."
+  },
+  {
+    "patterns": ["night sweats", "sweating at night", "hot flashes", "waking soaked"],
+    "response": "Use light breathable bedding, keep room cool, wear loose clothes, avoid triggers (alcohol, spicy food). If night sweats are heavy, cause weight loss, fever or related to menopause, check with doctor."
+  },
+  {
+    "patterns": ["anxiety", "feel nervous", "worrying", "panic"],
+    "response": "Practice breathing/grounding, mindfulness; reduce stimulants; talk therapy; if severe or persistent, see mental health professional. Medication may be used under supervision."
+  },
+  {
+    "patterns": ["depression", "feel low", "anhedonia", "hopelessness"],
+    "response": "Reach out for social support, structured routine, consider therapy or counseling. If thoughts of self-harm or profound despair, consult mental health urgently."
+  },
+  {
+    "patterns": ["memory problems", "forgetfulness", "confusion", "difficulty concentrating"],
+    "response": "Ensure good sleep, nutrition, reduce stress; check medications. If sudden or severe, or with other neurological signs, evaluate for causes (e.g. metabolic, neurological)."
+  },
+  {
+    "patterns": ["tingling hands or feet", "burning sensations", "neuropathy", "pins and needles in extremities"],
+    "response": "Check blood sugar, vitamin B12; avoid toxins; rest. If progressive or asymmetric, see neurology."
+  },
+  {
+    "patterns": ["loss of appetite", "not hungry", "food aversion", "less eating than usual"],
+    "response": "Eat small nutrient-dense meals; try appealing mild foods; check for digestive illness or systemic causes. If appetite remains low and causes weight loss, have medical workup."
+  },
+  {
+    "patterns": ["abdominal pain", "stomach ache", "cramps", "pain in belly"],
+    "response": "Avoid heavy meals, try bland diet, rest, use antacids or analgesics. If pain is severe, sudden, with fever, vomiting, blood, or persists, see a physician."
+  },
+  {
+    "patterns": ["acid reflux", "heartburn", "burning chest", "regurgitation"],
+    "response": "Eat small meals, avoid spicy/fatty food, don’t lie down soon after eating. Use antacids or proton pump inhibitors if prescribed. If frequent or worsening, see a gastroenterologist."
+  },
+  {
+    "patterns": ["anxiety", "panic", "feeling nervous", "worrying constantly"],
+    "response": "Try breathing exercises, grounding, mindfulness. Avoid stimulants (caffeine). If symptoms are severe or persistent, consult a mental health professional."
+  },
+  {
+    "patterns": ["appetite loss", "no hunger", "reduced desire to eat", "loss of interest in food"],
+    "response": "Eat small, nutrient-dense meals, gentle exercise, check for underlying causes (e.g. infection, depression). If it continues and weight drops, see a doctor."
+  },
+  {
+    "patterns": ["arthralgia", "joint pain", "stiff joints", "pain with movement"],
+    "response": "Rest, apply cold/heat, gentle stretching, NSAIDs if tolerated. If joint swelling, deformity or limitation persists, see a rheumatologist or orthopedist."
+  },
+  {
+    "patterns": ["back pain", "lower back ache", "pain after sitting", "stiffness in spine"],
+    "response": "Use heat/cold, gentle stretching, strengthen core, avoid heavy lifting. If pain radiates down leg, causes numbness or persists > a few weeks, see specialist."
+  },
+  {
+    "patterns": ["bleeding", "unexplained bleeding", "bleeding gums", "blood in stool or urine"],
+    "response": "Avoid trauma, monitor closely. If bleeding is heavy, persistent or spontaneous, seek hematology or general medical evaluation."
+  },
+  {
+    "patterns": ["bloating", "gas", "fullness", "abdominal distension"],
+    "response": "Avoid gas-forming foods, eat slowly, use digestive enzymes or simethicone if appropriate. If persistent or associated with weight loss or blood in stool, investigate further."
+  },
+  {
+    "patterns": ["body aches", "myalgia", "muscle pain", "aching all over"],
+    "response": "Rest, hydration, gentle movement, analgesics. If aches persist, worsen, or come with rash or fever, seek medical evaluation."
+  },
+  {
+    "patterns": ["breathlessness", "shortness of breath", "difficulty breathing", "can't catch breath"],
+    "response": "Stop activity, sit upright, breathe slowly. Use inhaler if prescribed. If sudden, severe, or associated with chest pain or cyanosis, get emergency care."
+  },
+  {
+    "patterns": ["chest pain", "pressure in chest", "tightness in chest", "pain radiating to jaw/arm"],
+    "response": "Stop exertion, rest, take aspirin if appropriate. If pain is severe, prolonged, or has sweating/shortness of breath, call emergency services."
+  },
+  {
+    "patterns": ["chills", "fever", "shivering", "raised body temperature"],
+    "response": "Rest, hydrate, take antipyretics (paracetamol, ibuprofen). If fever >39 °C, persists >3 days, or has other alarming signs, see a physician."
+  },
+  {
+    "patterns": ["cognitive issues", "brain fog", "difficulty concentrating", "confusion"],
+    "response": "Ensure good sleep, reduce stress, keep hydrated, evaluate medications. If acute or worsening, consider neurological or metabolic evaluation."
+  },
+  {
+    "patterns": ["constipation", "hard stools", "infrequent stools", "difficulty passing stool"],
+    "response": "Increase fiber, hydration, mild activity; use stool softeners or laxatives if appropriate. If obstruction signs or long duration, see GI specialist."
+  },
+  {
+    "patterns": ["cough", "dry cough", "productive cough", "persistent cough"],
+    "response": "Stay hydrated, use cough suppressants or expectorants accordingly, avoid irritants. If cough >2–3 weeks, blood in sputum, or shortness of breath, get further evaluation."
+  },
+  {
+    "patterns": ["cramping", "muscle cramp", "abdominal cramp", "leg cramp"],
+    "response": "Stretch, massage, warm compress, adequate electrolytes (magnesium, potassium). If cramps are recurrent, severe, or interfere with mobility, seek medical advice."
+  },
+  {
+    "patterns": ["diarrhea", "loose stool", "frequent bowel movements", "watery stool"],
+    "response": "Hydrate with electrolytes, light bland diet, avoid dairy/spicy food. If >48 hrs, blood in stool, or signs of dehydration, see doctor."
+  },
+  {
+    "patterns": ["dizziness", "lightheadedness", "vertigo", "feeling faint"],
+    "response": "Sit or lie down, hydrate, rise slowly from sitting/lying. If episodes are frequent or come with neurological signs, see ENT/neurologist."
+  },
+  {
+    "patterns": ["dry mouth", "xerostomia", "sticky mouth", "difficulty swallowing liquids"],
+    "response": "Sip water, chew sugar-free gum, avoid dry foods, maintain oral hygiene. If persistent, evaluate for conditions like Sjögren’s or side effects of meds."
+  },
+  {
+    "patterns": ["dry eyes", "burning eyes", "scratchy eyes", "eye dryness"],
+    "response": "Use artificial tears, blink often, reduce screen time, ensure humidity. If vision is affected or pain persists, see ophthalmologist."
+  },
+  {
+    "patterns": ["earache", "ear pain", "hearing changes", "fullness in ear"],
+    "response": "Avoid inserting objects, use warm compress, consult ENT if pain persists, hearing loss or discharge appears."
+  },
+  {
+    "patterns": ["fatigue", "tiredness", "low energy", "exhaustion"],
+    "response": "Ensure sleep hygiene, nutrition, hydration. Rule out anemia, thyroid, chronic disease. If fatigue is disabling or chronic, see physician."
+  },
+  {
+    "patterns": ["flushing", "redness of skin", "skin warmth", "sudden red patches"],
+    "response": "Cool environment, avoid triggers (alcohol, heat). If flushing is recurrent or associated with other systemic signs, evaluate for endocrine or other causes."
+  },
+  {
+    "patterns": ["frequent urination", "urinary frequency", "urinate often", "urge to urinate frequently"],
+    "response": "Limit bladder irritants (caffeine), maintain hydration, monitor patterns. If burning, blood in urine, or incontinence, see urologist."
+  },
+  {
+    "patterns": ["gas", "flatulence", "excessive belching", "intestinal gas"],
+    "response": "Avoid gas-forming foods, eat slowly, use digestive aids. If severe, with abdominal pain or weight loss, get GI evaluation."
+  },
+  {
+    "patterns": ["gastrointestinal bleeding", "blood in stool", "black tarry stool", "bright red blood per rectum"],
+    "response": "Do not ignore. Seek urgent evaluation (endoscopy) to find source (ulcer, hemorrhoids, GI lesion)."
+  },
+  {
+    "patterns": ["hair loss", "hair thinning", "alopecia", "patchy hair loss"],
+    "response": "Check nutrition, thyroid, hormonal levels. Use gentle hair care. If sudden or patchy, see dermatologist."
+  },
+  {
+    "patterns": ["halitosis", "bad breath", "foul breath", "persistent mouth odor"],
+    "response": "Oral hygiene, brushing, tongue cleaning, hydration. Check for dental issues, GI problems, sinus causes."
+  },
+  {
+    "patterns": ["headache", "migraine", "pressure head", "throbbing head pain"],
+    "response": "Rest in quiet/dark room, analgesics, hydration, avoid triggers. If severe, frequent, or with visual/aura signs, see neurologist."
+  },
+  {
+    "patterns": ["heart racing", "palpitations", "skipped beats", "tachycardia"],
+    "response": "Calm breathing, avoid stimulants, monitor heart rate. If persists, palpitations with chest pain or syncope, see cardiologist."
+  },
+  {
+    "patterns": ["heavy menstrual bleeding", "menorrhagia", "soaking pads", "prolonged period"],
+    "response": "Track bleeding, iron supplementation, NSAIDs, hormonal therapy if prescribed. If anemia, clots, or severe pain, see gynecologist."
+  },
+  {
+    "patterns": ["hives", "urticaria", "wheals on skin", "raised itchy welts"],
+    "response": "Antihistamines, cool compresses, avoid allergens. If swelling of face/lips or breathing difficulty, treat as emergency."
+  },
+  {
+    "patterns": ["hot flashes", "night sweats", "sudden warmth", "waking drenched"],
+    "response": "Use breathable clothes, keep environment cool, avoid triggers (spicy food, caffeine). If persistent or severe, evaluate hormonal causes."
+  },
+  {
+    "patterns": ["hunger", "cravings", "excessive appetite", "eat more than usual"],
+    "response": "Eat balanced meals, avoid sugary foods, check blood sugar. If persistent, investigate endocrine or metabolic disorder."
+  },
+  {
+    "patterns": ["indigestion", "dyspepsia", "upper abdominal discomfort", "bloating after meals"],
+    "response": "Eat small meals, avoid greasy/spicy foods, use antacids or proton pump inhibitors if prescribed. If persistent or with weight loss, see GI specialist."
+  },
+  {
+    "patterns": ["infertility", "difficulty conceiving", "unable to get pregnant", "repeated failed attempts"],
+    "response": "Track ovulation, evaluate hormonal, anatomical, male factors. Seek fertility specialist if unable after 6–12 months."
+  },
+  {
+    "patterns": ["irregular periods", "amenorrhea", "oligomenorrhea", "skipped cycles"],
+    "response": "Track cycle length and pattern, check hormonal levels. If persistent for 3+ cycles or accompanied by pain, see gynecologist."
+  },
+  {
+    "patterns": ["joint stiffness", "stiff joints in morning", "difficulty moving joints", "reduced joint mobility"],
+    "response": "Gentle movement, warm baths, NSAIDs if needed. If stiffness lasts >1 hour daily or causes deformity, see rheumatologist."
+  },
+  {
+    "patterns": ["lack of concentration", "poor focus", "difficulty sustaining attention", "mind wandering"],
+    "response": "Reduce distractions, get rest, break tasks into smaller steps. If cognitive decline severe or sudden, evaluate neurologically."
+  },
+  {
+    "patterns": ["loss of smell", "anosmia", "diminished smell", "can't detect odors"],
+    "response": "Check for nasal obstruction, infection. If persists, consider neurological or ENT evaluation."
+  },
+  {
+    "patterns": ["low mood", "sadness", "feeling down", "hopelessness"],
+    "response": "Engage social support, activities, consider therapy. If persists >2 weeks or suicidal thoughts, consult mental health care."
+  },
+  {
+    "patterns": ["menstrual cramps", "dysmenorrhea", "lower abdominal pain during period", "cramps before period"],
+    "response": "Use heat, NSAIDs, rest, mild exercise. If severe or interfering with life, evaluate for endometriosis or fibroids."
+  },
+  {
+    "patterns": ["memory loss", "forgetfulness", "short-term memory issues", "difficulty recalling"],
+    "response": "Use reminders, engage cognitively, ensure sleep/nutrition. If sudden or worsening, evaluation for neurological causes needed."
+  },
+  {
+    "patterns": ["mood swings", "irritability", "emotional changes", "upset easily"],
+    "response": "Track triggers, stress management, psychotherapy. If extreme or interfering with functioning, assess for mood disorder."
+  },
+  {
+    "patterns": ["muscle weakness", "loss of muscle strength", "difficulty lifting objects", "limb weakness"],
+    "response": "Rest, mild activity, check electrolytes and nutrition. If weakness is focal, sudden, or progressive, see neurology."
+  },
+  {
+    "patterns": ["nausea", "queasiness", "urge to vomit", "feeling sick to stomach"],
+    "response": "Sip water, bland diet, antiemetic if prescribed. If persistent, with blood, dehydration, or weight loss, see GI specialist."
+  },
+  {
+    "patterns": ["neck pain", "pain in neck", "stiff neck", "pain turning head"],
+    "response": "Use ergonomic posture, warmth, gentle stretching. If pain radiates, causes numbness, or persists, evaluate cervical spine."
+  },
+  {
+    "patterns": ["numbness", "tingling", "pins and needles", "loss of sensation"],
+    "response": "Check posture, avoid nerve compression, evaluate vitamin levels. If sudden, asymmetric, or with weakness, see neurologist."
+  },
+  {
+    "patterns": ["nocturia", "night urination", "waking to urinate", "urinating at night often"],
+    "response": "Limit fluid before bed, avoid caffeine. If frequent or associated with other urinary symptoms, see urologist."
+  },
+  {
+    "patterns": ["odor changes", "body odor change", "bad body smell", "new smell"],
+    "response": "Review hygiene, diet, metabolic disorders. If acute or persistent and unexplained, seek medical evaluation."
+  },
+  {
+    "patterns": ["palpitations", "skipped heartbeats", "fluttering in chest", "irregular heartbeat"],
+    "response": "Calm breathing, avoid stimulants. If palpitations are frequent, associated with dizziness or chest pain, see cardiologist."
+  },
+  {
+    "patterns": ["paresthesia", "pins and needles", "tingling", "burning sensation"],
+    "response": "Relieve pressure, check for neuropathy causes. If persistent or worsening, evaluate neurology."
+  },
+  {
+    "patterns": ["pelvic pain", "lower abdominal cramp", "pain in pelvis", "pressure in pelvic area"],
+    "response": "Rest, heat, NSAIDs. If severe, with bleeding or urinary/GI symptoms, see gynecologist or urologist."
+  },
+  {
+    "patterns": ["poor sleep", "insomnia", "difficulty sleeping", "waking frequently"],
+    "response": "Maintain sleep hygiene, avoid screens before bed, relaxation routines. If insomnia >2–3 weeks, consult sleep medicine specialist."
+  },
+  {
+    "patterns": ["post-nasal drip", "mucus dripping down throat", "constant throat clearing", "throat mucus"],
+    "response": "Use nasal saline sprays, stay hydrated, treat allergies. If persists or with infection signs, see ENT."
+  },
+  {
+    "patterns": ["dark circles under eyes", "under-eye shadows", "periorbital darkening", "bags under eyes"],
+    "response": "Ensure adequate sleep, reduce salt, treat allergies. If persistent and unexplained, evaluate for systemic causes."
+  },
+  {
+    "patterns": ["rash", "skin patches", "red spots", "skin discoloration"],
+    "response": "Avoid irritants, use soothing creams, observe progression. If spreading, blistering, or accompanied by systemic signs, see dermatologist."
+  },
+  {
+    "patterns": ["red eyes", "eye redness", "iris injection", "bloodshot eyes"],
+    "response": "Use lubricating drops, avoid irritants. If pain, vision change, discharge, see eye care provider."
+  },
+  {
+    "patterns": ["runny nose", "nasal discharge", "rhinorrhea", "watering nose"],
+    "response": "Use saline nasal rinse, antihistamines, decongestants. If persists or with sinus pain, see ENT."
+  },
+  {
+    "patterns": ["skin dryness", "xerosis", "flaky skin", "tight skin"],
+    "response": "Use moisturizers, avoid hot showers, use gentle cleansers. If cracks or bleeding, see dermatologist."
+  },
+  {
+    "patterns": ["skin itching", "pruritus", "itchy skin", "scratchiness"],
+    "response": "Use mild moisturizers, anti-itch creams or antihistamines. If widespread, persistent, or with rash/infection, see a dermatologist."
+  },
+  {
+    "patterns": ["skin peeling", "flaking", "peeling skin", "skin shedding"],
+    "response": "Use gentle care, moisturizers, avoid harsh exfoliants. If excessive peeling or associated with rash, see dermatologist."
+  },
+  {
+    "patterns": ["sore throat", "pain swallowing", "scratchy throat", "throat irritation"],
+    "response": "Gargle warm salt water, rest voice, use lozenges. If persists >1 week, or with fever/swelling, see ENT."
+  },
+  {
+    "patterns": ["speech difficulty", "slurred speech", "trouble speaking", "speech slowness"],
+    "response": "Note onset, associated weakness or stroke signs. If sudden or progressive, immediate neurological evaluation needed."
+  },
+  {
+    "patterns": ["swelling", "edema", "puffiness", "swollen limbs"],
+    "response": "Elevate area, restrict salt, compression garments. If sudden, asymmetric, or with dyspnea, see cardiology/vascular specialist."
+  },
+  {
+    "patterns": ["sweating", "excess sweating", "night sweats", "perspiration"],
+    "response": "Use breathable clothing, cool environment. If excessive, unexplained or with fever/weight loss, evaluate endocrine or infection."
+  },
+  {
+    "patterns": ["tinnitus", "ringing in ears", "ear buzzing", "ear noise"],
+    "response": "Avoid loud noise, reduce salt. If persistent or associated with hearing loss or dizziness, see ENT/audiologist."
+  },
+  {
+    "patterns": ["tremors", "shaking hands", "involuntary movement", "body tremble"],
+    "response": "Reduce stimulants (caffeine), manage stress. If persistent, worsening or interfering with tasks, see neurology."
+  },
+  {
+    "patterns": ["urinary burning", "dysuria", "painful urination", "burn on passing urine"],
+    "response": "Hydrate, avoid irritants like caffeine/spicy food. If persists, with blood, fever, or worsening, get urinary workup."
+  },
+  {
+    "patterns": ["urinary incontinence", "leakage urine", "unable to hold urine", "wetting self"],
+    "response": "Pelvic floor exercises, bladder training. If sudden or severe, see urologist or gynecologist."
+  },
+  {
+    "patterns": ["urine discoloration", "dark urine", "pink urine", "red urine"],
+    "response": "Check hydration, avoid foods/meds causing discoloration. If persists, with pain or blood, get renal/bladder evaluation."
+  },
+  {
+    "patterns": ["vision changes", "blurred vision", "double vision", "loss of vision"],
+    "response": "Avoid eye strain, rest. If sudden or with pain/flashes/dark spots, see ophthalmologist emergently."
+  },
+  {
+    "patterns": ["vomiting", "throwing up", "emesis", "retching"],
+    "response": "Hydrate, bland diet, antiemetic if prescribed. If persistent, with blood, dehydration, or neurological signs, seek care."
+  },
+  {
+    "patterns": ["weight gain", "unexplained weight gain", "sudden increase in weight", "fluid retention"],
+    "response": "Review diet, salt intake, evaluate thyroid/cardiac/renal causes. If rapid or associated with edema, see physician."
+  },
+  {
+    "patterns": ["weight loss", "unintentional weight loss", "wasting", "reduced body mass"],
+    "response": "Track diet, assess for malabsorption, metabolic or oncologic causes. If >5% loss or persistent, urgent evaluation."
+  },
+  {
+    "patterns": ["weakness", "loss of strength", "general weakness", "difficulty with tasks"],
+    "response": "Rest, nutrition, exercise gradually. If focal, progressive or sudden, neurological or metabolic workup needed."
+  },
+  {
+    "patterns": ["wheezing", "whistling breath", "asthma sound", "respiratory wheeze"],
+    "response": "Use inhaler, avoid triggers, monitor breathing. If severe or with respiratory distress, seek urgent respiratory care."
+  },
+  {
+    "patterns": ["metallic taste", "strange taste", "bad taste in mouth", "persistent odd taste"],
+    "response": "Check oral hygiene, medications, diet. If persistent, unexplained, see ENT or dental evaluation."
+  },
+  {
+    "patterns": ["clumsiness", "poor coordination", "ataxia", "difficulty with balance or fine tasks"],
+    "response": "Reduce multitasking, rest, safety. If onset is sudden or worsening, neurological evaluation is advised."
+  },
+  {
+    "patterns": ["excessive thirst", "polydipsia", "very thirsty", "urge to drink often"],
+    "response": "Monitor fluid intake, check blood sugar, electrolyte levels. If persistent, evaluate endocrine/metabolic causes."
+  },
+  {
+    "patterns": ["excessive hunger", "polyphagia", "always hungry", "unable to feel full"],
+    "response": "Check blood sugar and metabolic status, eat balanced meals. If abnormal, get endocrinology consultation."
+  },
+  {
+    "patterns": ["slow healing wounds", "delayed wound healing", "ulcers not closing", "persistent sores"],
+    "response": "Ensure good nutrition, control blood sugar, wound care. If chronic or expanding, see dermatologist or specialist."
+  },
+  {
+    "patterns": ["bleeding gums", "gum bleeding", "gums bleed when brushing", "inflamed gums"],
+    "response": "Improve oral hygiene, gentle brushing, check for vitamin deficiencies. If persistent or heavy, see dentist."
+  },
+  {
+    "patterns": ["swollen lymph nodes", "lymph node enlargement", "lumps under skin", "tender swelling"],
+    "response": "Monitor size, pain, systemic symptoms. If >4-6 weeks or increasing or hard, see hematology or ENT."
+  },
+  {
+    "patterns": ["light sensitivity", "photophobia", "eyes hurt in brightness", "unable to tolerate light"],
+    "response": "Wear sunglasses, reduce screen brightness, rest eyes. If severe or with vision change, see ophthalmologist."
+  },
+  {
+    "patterns": ["sound sensitivity", "hyperacusis", "sensitive to noise", "ear discomfort with noise"],
+    "response": "Use ear protection, reduce noisy environments. If significant or associated with other symptoms, evaluate auditory system."
+  },
+  {
+    "patterns": ["frequent infections", "recurring infections", "get sick easily", "impaired immunity"],
+    "response": "Optimize nutrition, sleep, hygiene. If recurrent, evaluate immune function or chronic disease."
+  },
+  {
+    "patterns": ["dry skin", "xeroderma", "chapped skin", "rough skin"],
+    "response": "Use moisturizers, avoid harsh soaps. If cracks, bleeding, or unresponsive, see dermatologist."
+  },
+  {
+    "patterns": ["nosebleeds", "epistaxis", "bleeding from nose", "frequent nose bleeding"],
+    "response": "Pinch nose, lean forward, apply ice. If recurrent or heavy, get ENT evaluation."
+  },
+  {
+    "patterns": ["hair thinning", "reduced hair density", "thin hair", "scalp hair loss"],
+    "response": "Check hormones, nutrition, reduce stress. If progressive, see dermatologist or endocrinologist."
+  },
+  {
+    "patterns": ["vomiting blood", "hematemesis", "bloody vomit", "coffee ground vomit"],
+    "response": "Urgent evaluation needed—possible GI bleed. Go to emergency care immediately."
+  },
+  {
+    "patterns": ["blood in stool", "hematochezia", "dark red stool", "black tarry stool"],
+    "response": "Do not ignore. Urgent GI evaluation and colonoscopy may be needed to find bleeding source."
+  },
+  {
+    "patterns": ["cold intolerance", "always feeling cold", "sensitivity to cold", "cannot warm up"],
+    "response": "Check thyroid function, anemia, circulation. If significant, consult endocrinologist or physician."
+  },
+  {
+    "patterns": ["heat intolerance", "feeling overheated easily", "sensitivity to heat", "sweating excessively"],
+    "response": "Avoid hot environments, hydrate, wear breathable clothing. If extreme or with other signs, evaluate thyroid or autonomic function."
+  },
+  {
+    "patterns": ["restless legs", "urge to move legs", "leg discomfort at rest", "involuntary leg movement"],
+    "response": "Avoid stimulants, maintain regular sleep schedule, good iron levels. If severe, refer to neurology or sleep specialist."
+  },
+  {
+    "patterns": ["workplace stress", "job-related anxiety", "work-induced tension", "stress from work environment"],
+    "response": "Implement stress management techniques, encourage open communication, and promote a healthy work-life balance."
+  },
+  {
+    "patterns": ["burnout", "emotional exhaustion", "workplace burnout", "chronic work fatigue"],
+    "response": "Encourage regular breaks, promote a supportive work culture, and provide resources for mental health support."
+  },
+  {
+    "patterns": ["compassion fatigue", "empathy burnout", "emotional burnout", "helping professional stress"],
+    "response": "Provide training on emotional resilience, encourage self-care practices, and offer peer support programs."
+  },
+  {
+    "patterns": ["ergophobia", "fear of work", "workplace anxiety", "work-related phobia"],
+    "response": "Offer counseling services, promote a supportive work environment, and encourage gradual exposure to work tasks."
+  },
+  {
+    "patterns": ["emotional exhaustion", "mental fatigue", "burnout symptoms", "chronic tiredness"],
+    "response": "Encourage regular rest, promote stress management techniques, and provide resources for mental health support."
+  },
+  {
+    "patterns": ["job strain", "workplace stress", "job-related tension", "work-induced anxiety"],
+    "response": "Implement stress management programs, encourage open communication, and promote a healthy work-life balance."
+  },
+  {
+    "patterns": ["work-family conflict", "work-life imbalance", "family-work stress", "work-related family issues"],
+    "response": "Promote flexible work arrangements, encourage open communication, and support work-life balance initiatives."
+  },
+  {
+    "patterns": ["boreout", "underwork stress", "lack of stimulation", "workplace boredom"],
+    "response": "Encourage job enrichment, promote skill development, and provide opportunities for meaningful work."
+  },
+  {
+    "patterns": ["overwork", "work overload", "excessive work hours", "work-related stress"],
+    "response": "Encourage regular breaks, promote a healthy work-life balance, and provide resources for stress management."
+  },
+  {
+    "patterns": ["workplace mental health policies", "organizational mental health strategies", "employee well-being programs", "workplace wellness initiatives"],
+    "response": "Develop and implement comprehensive mental health policies, promote a supportive work environment, and provide resources for employee well-being."
+  },
+  {
+    "patterns": ["bereavement", "grief", "loss of a loved one", "mourning"],
+    "response": "Offer counseling services, provide support groups, and encourage open communication about grief."
+  },
+  {
+    "patterns": ["anticipatory grief", "pre-death grief", "grieving before loss", "impending loss anxiety"],
+    "response": "Provide counseling services, offer support groups, and encourage open communication about anticipatory grief."
+  },
+  {
+    "patterns": ["complicated grief", "prolonged grief disorder", "intense mourning", "grief that doesn't improve over time"],
+    "response": "Offer specialized counseling services, provide support groups, and encourage professional mental health support."
+  },
+  {
+    "patterns": ["cultural perspectives on grief", "grief in different cultures", "cultural mourning practices", "cross-cultural grief"],
+    "response": "Promote cultural sensitivity, encourage open dialogue about cultural differences in grief, and provide culturally appropriate support."
+  },
+  {
+    "patterns": ["grief in children", "childhood mourning", "kids dealing with loss", "grieving children"],
+    "response": "Provide age-appropriate counseling, offer support groups for children, and encourage open communication about grief."
+  },
+  {
+    "patterns": ["pet loss", "mourning a pet", "grieving animal companion", "loss of a pet"],
+    "response": "Offer counseling services, provide support groups for pet loss, and encourage open communication about grief."
+  },
+  {
+    "patterns": ["anniversary reactions", "grief anniversaries", "mourning on significant dates", "loss anniversary grief"],
+    "response": "Encourage preparation for significant dates, offer counseling services, and provide support groups for anniversary reactions."
+  },
+  {
+    "patterns": ["support systems in grief", "grief support networks", "mourning support", "help for the grieving"],
+    "response": "Encourage participation in support groups, promote open communication, and provide resources for grief support."
+  },
+  {
+    "patterns": ["grief and mental health disorders", "depression after loss", "anxiety from mourning", "mental health effects of grief"],
+    "response": "Offer counseling services, provide support groups, and encourage professional mental health support."
+  },
+  {
+    "patterns": ["healing through rituals", "grief rituals", "mourning ceremonies", "cultural mourning practices"],
+    "response": "Encourage participation in meaningful rituals, promote cultural sensitivity, and provide support for ritual practices."
+  },
+  {
+    "patterns": ["relationship stress", "couple conflicts", "relationship anxiety", "partner issues"],
+    "response": "Encourage open communication, provide relationship counseling, and promote conflict resolution skills."
+  },
+  {
+    "patterns": ["communication in relationships", "relationship dialogue", "effective communication with partner", "couple communication skills"],
+    "response": "Provide communication skills training, encourage active listening, and promote open dialogue in relationships."
+  },
+  {
+    "patterns": ["intimacy issues", "emotional distance", "physical intimacy problems", "relationship closeness issues"],
+    "response": "Encourage open communication, provide relationship counseling, and promote emotional connection in relationships."
+  },
+  {
+    "patterns": ["trust and betrayal", "relationship trust issues", "infidelity", "betrayal in relationships"],
+    "response": "Provide relationship counseling, encourage open communication, and promote trust-building exercises."
+  },
+  {
+    "patterns": ["co-dependency", "relationship dependency", "emotional reliance", "unhealthy relationship dynamics"],
+    "response": "Provide counseling services, encourage self-awareness, and promote healthy relationship boundaries."
+  },
+  {
+    "patterns": ["parent-child relationships", "family dynamics", "parenting stress", "child-parent conflicts"],
+    "response": "Provide family counseling, promote positive parenting techniques, and encourage open communication within families."
+  },
+  {
+    "patterns": ["friendship maintenance", "keeping friends", "relationship with friends", "platonic relationship issues"],
+    "response": "Encourage regular communication, provide conflict resolution strategies, and promote mutual support among friends."
+  },
+  {
+    "patterns": ["conflict resolution", "dispute management", "relationship conflicts", "handling disagreements"],
+    "response": "Provide conflict resolution training, encourage open communication, and promote empathy in resolving disputes."
+  },
+  {
+    "patterns": ["emotional abuse", "psychological harm", "mental abuse", "covert abuse in relationships"],
+    "response": "Encourage awareness of emotional abuse signs, provide counseling services, and promote healthy relationship practices."
+  },
+  {
+    "patterns": ["relationship counseling", "couples therapy", "family therapy", "relationship support services"],
+    "response": "Provide access to professional counseling services, promote open communication, and encourage seeking help when needed."
+  },
+  {
+    "patterns": ["self-esteem", "self-worth", "confidence", "positive self-image"],
+    "response": "Encourage self-reflection, promote self-compassion, and provide resources for building self-esteem."
+  },
+  {
+    "patterns": ["self-compassion", "self-kindness", "self-acceptance", "treating oneself with care"],
+    "response": "Promote self-care practices, encourage positive self-talk, and provide resources for developing self-compassion."
+  },
+  {
+    "patterns": ["goal setting", "personal objectives", "achieving goals", "setting and reaching goals"],
+    "response": "Encourage SMART goal setting, provide resources for goal achievement, and promote accountability."
+  },
+  {
+    "patterns": ["time management", "productivity", "task organization", "managing time effectively"],
+    "response": "Provide time management tools, encourage prioritization, and promote work-life balance."
+  },
+  {
+    "patterns": ["procrastination", "delaying tasks", "avoiding responsibilities", "putting off work"],
+    "response": "Encourage breaking tasks into smaller steps, provide motivation strategies, and promote accountability."
+  },
+  {
+    "patterns": ["growth mindset", "embracing challenges", "learning from failure", "belief in development"],
+    "response": "Promote a positive attitude towards learning, encourage resilience, and provide resources for personal growth."
+  },
+  {
+    "patterns": ["resilience", "bouncing back", "mental toughness", "overcoming adversity"],
+    "response": "Encourage problem-solving skills, promote a positive outlook, and provide resources for building resilience."
+  },
+  {
+    "patterns": ["positive psychology", "optimism", "strengths-based approach", "well-being focus"],
+    "response": "Promote gratitude practices, encourage strengths identification, and provide resources for enhancing well-being."
+  },
+  {
+    "patterns": ["mindfulness", "present moment awareness", "meditation", "stress reduction techniques"],
+    "response": "Encourage regular mindfulness practice, provide resources for meditation, and promote stress reduction techniques."
+  },
+  {
+    "patterns": ["cognitive behavioral therapy", "CBT techniques", "thought restructuring", "behavioral change strategies"],
+    "response": "Provide access to CBT resources, encourage cognitive restructuring, and promote behavioral change techniques."
+  },
+  {
+    "patterns": ["anxiety disorders", "generalized anxiety", "panic attacks", "social anxiety"],
+    "response": "Encourage seeking professional help, provide relaxation techniques, and promote coping strategies."
+  },
+  {
+    "patterns": ["depression", "persistent sadness", "loss of interest", "feeling hopeless"],
+    "response": "Encourage seeking professional help, provide support groups, and promote self-care practices."
+  },
+  {
+    "patterns": ["post-traumatic stress disorder", "PTSD", "trauma response", "flashbacks"],
+    "response": "Encourage seeking professional help, provide trauma-informed care, and promote coping strategies."
+  },
+  {
+    "patterns": ["obsessive-compulsive disorder", "OCD", "intrusive thoughts", "compulsive behaviors"],
+    "response": "Encourage seeking professional help, provide CBT resources, and promote coping strategies."
+  },
+  {
+    "patterns": ["eating disorders", "anorexia", "bulimia", "binge eating"],
+    "response": "Encourage seeking professional help, provide support groups, and promote healthy eating habits."
+  },
+   {
+    "patterns": ["job insecurity", "fear of job loss", "employment uncertainty", "workplace instability"],
+    "response": "Encourage open communication, provide career counseling, and promote skill development opportunities."
+  },
+  {
+    "patterns": ["remote work stress", "work-from-home anxiety", "virtual work fatigue", "telecommuting challenges"],
+    "response": "Implement clear communication channels, promote work-life balance, and provide resources for remote work well-being."
+  },
+  {
+    "patterns": ["workplace bullying", "harassment at work", "hostile work environment", "employee mistreatment"],
+    "response": "Establish clear anti-bullying policies, provide training on respectful behavior, and offer support for affected employees."
+  },
+  {
+    "patterns": ["employee burnout", "workplace exhaustion", "chronic work stress", "mental fatigue from work"],
+    "response": "Encourage regular breaks, promote a supportive work culture, and provide resources for mental health support."
+  },
+  {
+    "patterns": ["workplace discrimination", "unequal treatment at work", "bias in the workplace", "employee inequality"],
+    "response": "Implement diversity and inclusion programs, provide training on unconscious bias, and establish clear anti-discrimination policies."
+  },
+  {
+    "patterns": ["workplace harassment", "sexual harassment at work", "verbal abuse at work", "physical intimidation at work"],
+    "response": "Establish clear anti-harassment policies, provide training on respectful behavior, and offer support for affected employees."
+  },
+  {
+    "patterns": ["workplace conflict", "employee disputes", "team disagreements", "office politics"],
+    "response": "Encourage open communication, provide conflict resolution training, and promote a collaborative work environment."
+  },
+  {
+    "patterns": ["workplace anxiety", "stress at work", "work-related nervousness", "job performance anxiety"],
+    "response": "Implement stress management techniques, encourage open communication, and provide resources for mental health support."
+  },
+  {
+    "patterns": ["workplace depression", "feeling down at work", "lack of motivation at work", "work-related sadness"],
+    "response": "Encourage seeking professional help, provide support groups, and promote self-care practices."
+  },
+  {
+    "patterns": ["workplace trauma", "post-traumatic stress at work", "workplace-related PTSD", "trauma from work events"],
+    "response": "Provide trauma-informed care, offer counseling services, and promote a supportive work environment."
+  },
+  {
+    "patterns": ["workplace stress management", "coping with work stress", "stress reduction at work", "managing work pressure"],
+    "response": "Implement stress management programs, encourage regular breaks, and promote a healthy work-life balance."
+  },
+  {
+    "patterns": ["workplace wellness programs", "employee well-being initiatives", "corporate wellness strategies", "workplace health programs"],
+    "response": "Develop and implement comprehensive wellness programs, promote a supportive work environment, and provide resources for employee well-being."
+  },
+  {
+    "patterns": ["workplace mental health support", "employee assistance programs", "mental health resources at work", "workplace counseling services"],
+    "response": "Provide access to mental health resources, promote open communication, and encourage seeking help when needed."
+  },
+  {
+    "patterns": ["workplace flexibility", "flexible work hours", "remote work options", "work-life balance at work"],
+    "response": "Promote flexible work arrangements, encourage open communication, and support work-life balance initiatives."
+  },
+  {
+    "patterns": ["workplace recognition", "employee appreciation", "acknowledging employee efforts", "recognizing employee achievements"],
+    "response": "Implement recognition programs, encourage positive feedback, and promote a supportive work culture."
+  },
+  {
+    "patterns": ["workplace communication", "effective communication at work", "team communication", "communication skills at work"],
+    "response": "Provide communication skills training, encourage open dialogue, and promote a collaborative work environment."
+  },
+  {
+    "patterns": ["workplace leadership", "effective leadership at work", "management skills", "leadership development"],
+    "response": "Provide leadership training, encourage supportive management practices, and promote a positive work culture."
+  },
+  {
+    "patterns": ["workplace motivation", "employee engagement", "boosting morale at work", "increasing productivity at work"],
+    "response": "Implement motivation strategies, encourage goal setting, and provide opportunities for professional development."
+  },
+  {
+    "patterns": ["workplace productivity", "time management at work", "task prioritization", "improving efficiency at work"],
+    "response": "Provide time management training, encourage task prioritization, and promote a productive work environment."
+  },
+  {
+    "patterns": ["workplace burnout prevention", "avoiding burnout at work", "preventing work-related exhaustion", "burnout mitigation strategies"],
+    "response": "Encourage regular breaks, promote a supportive work culture, and provide resources for mental health support."
+  },
+  {
+    "patterns": ["workplace resilience", "building resilience at work", "coping with work challenges", "developing mental toughness at work"],
+    "response": "Provide resilience training, encourage positive coping strategies, and promote a supportive work environment."
+  },
+  {
+    "patterns": ["workplace stress reduction", "reducing stress at work", "stress management techniques at work", "creating a stress-free work environment"],
+    "response": "Implement stress reduction programs, encourage regular breaks, and promote a healthy work-life balance."
+  },
+  {
+    "patterns": ["workplace emotional intelligence", "emotional awareness at work", "managing emotions at work", "empathy in the workplace"],
+    "response": "Provide emotional intelligence training, encourage self-awareness, and promote a supportive work culture."
+  },
+  {
+    "patterns": ["workplace conflict resolution", "resolving disputes at work", "managing conflicts in the workplace", "conflict management strategies"],
+    "response": "Provide conflict resolution training, encourage open communication, and promote a collaborative work environment."
+  },
+  {
+    "patterns": ["workplace team building", "improving team dynamics", "team collaboration", "building effective teams at work"],
+    "response": "Implement team-building activities, encourage open communication, and promote a collaborative work environment."
+  },
+  {
+    "patterns": ["workplace diversity and inclusion", "promoting diversity at work", "inclusive workplace culture", "embracing diversity in the workplace"],
+    "response": "Implement diversity and inclusion programs, provide training on unconscious bias, and establish clear anti-discrimination policies."
+  },
+  {
+    "patterns": ["workplace harassment prevention", "preventing harassment at work", "anti-harassment policies", "creating a respectful work environment"],
+    "response": "Establish clear anti-harassment policies, provide training on respectful behavior, and offer support for affected employees."
+  },
+  {
+    "patterns": ["workplace employee engagement", "increasing employee engagement", "employee involvement at work", "boosting employee morale"],
+    "response": "Implement engagement strategies, encourage open communication, and provide opportunities for professional development."
+  },
+  {
+    "patterns": ["workplace performance management", "evaluating employee performance", "setting performance goals", "improving work performance"],
+    "response": "Implement performance management systems, provide feedback, and promote a supportive work environment."
+  },
+  {
+    "patterns": ["workplace stress assessment", "measuring stress at work", "stress levels in the workplace", "workplace stress surveys"],
+    "response": "Conduct regular stress assessments, identify stressors, and implement strategies to mitigate stress."
+  },
+  {
+    "patterns": ["workplace mental health awareness", "raising awareness about mental health at work", "mental health education for employees", "promoting mental health in the workplace"],
+    "response": "Provide mental health education, encourage open communication, and promote a supportive work environment."
+  },
+  {
+    "patterns": ["workplace employee well-being", "promoting employee well-being", "workplace health initiatives", "supporting employee health"],
+    "response": "Implement well-being programs, provide resources for mental health support, and promote a healthy work-life balance."
+  },
+  {
+    "patterns": ["workplace leadership development", "developing leadership skills", "leadership training programs", "enhancing leadership capabilities"],
+    "response": "Provide leadership development programs, encourage mentorship, and promote a positive work culture."
+  },
+  {
+    "patterns": ["workplace change management", "managing organizational change", "adapting to change at work", "change initiatives in the workplace"],
+    "response": "Implement change management strategies, communicate effectively, and provide support during transitions."
+  },
+  {
+    "patterns": ["workplace employee recognition", "recognizing employee achievements", "employee appreciation programs", "acknowledging employee contributions"],
+    "response": "Implement recognition programs, encourage positive feedback, and promote a supportive work culture."
+  },
+  {
+    "patterns": ["workplace communication skills", "improving communication at work", "effective communication in teams", "communication training for employees"],
+    "response": "Provide communication skills training, encourage open dialogue, and promote a collaborative work environment."
+  },
+  {
+    "patterns": ["workplace time management", "managing time at work", "prioritizing tasks at work", "improving productivity at work"],
+    "response": "Provide time management training, encourage task prioritization, and promote a productive work environment."
+  },
+  {
+    "patterns": ["workplace stress management programs", "implementing stress management at work", "workplace wellness initiatives", "reducing stress in the workplace"],
+    "response": "Implement stress management programs, encourage regular breaks, and promote a healthy work-life balance."
+  },
+  {
+    "patterns": ["workplace employee support programs", "providing support for employees", "employee assistance programs", "workplace counseling services"],
+    "response": "Provide access to support programs, encourage seeking help when needed, and promote a supportive work environment."
+  },
+  {
+    "patterns": ["workplace mental health policies", "developing mental health policies at work", "mental health guidelines for employees", "workplace mental health standards"],
+    "response": "Develop and implement mental health policies, provide training, and promote a supportive work environment."
+  },
+  {
+    "patterns": ["workplace stress reduction techniques", "reducing stress at work", "stress management strategies", "creating a stress-free work environment"],
+    "response": "Implement stress reduction techniques, encourage regular breaks, and promote a healthy work-life balance."
+  },
+  {
+    "patterns": ["chest pain", "tightness in chest", "pressure in chest", "pain radiating to arm or jaw"],
+    "response": "Call emergency services immediately. Have the person rest and avoid exertion. If trained, administer aspirin unless contraindicated."
+  },
+  {
+    "patterns": ["fainting", "loss of consciousness", "syncope", "feeling lightheaded"],
+    "response": "Lay the person flat and elevate their legs. Loosen tight clothing and ensure fresh air. If not responsive after 1 minute, seek emergency medical help."
+  },
+  {
+    "patterns": ["severe bleeding", "heavy bleeding", "wound bleeding heavily", "deep cut bleeding"],
+    "response": "Apply firm, direct pressure to the wound with a clean cloth. If bleeding doesn't stop, use a tourniquet above the wound and seek emergency medical help."
+  },
+  {
+    "patterns": ["severe allergic reaction", "anaphylaxis", "swelling of face or throat", "difficulty breathing after exposure to allergen"],
+    "response": "Administer epinephrine if available. Call emergency services immediately. Keep the person calm and seated."
+  },
+  {
+    "patterns": ["severe burn", "third-degree burn", "charred skin", "burn with blisters"],
+    "response": "Cool the burn under running cold water for at least 10 minutes. Cover with a clean, non-stick bandage. Seek emergency medical help."
+  },
+  {
+    "patterns": ["choking", "unable to breathe", "clutching throat", "no sound when trying to speak"],
+    "response": "Perform the Heimlich maneuver if trained. If the person becomes unconscious, begin CPR and call emergency services."
+  },
+  {
+    "patterns": ["seizure", "convulsions", "uncontrolled shaking", "loss of consciousness with jerking movements"],
+    "response": "Clear the area of hazards. Place the person on their side. Do not restrain movements. Call emergency services if the seizure lasts more than 5 minutes."
+  },
+  {
+    "patterns": ["stroke", "sudden numbness", "difficulty speaking", "vision problems", "weakness on one side of body"],
+    "response": "Use the FAST acronym: Face drooping, Arm weakness, Speech difficulty, Time to call emergency services."
+  },
+  {
+    "patterns": ["heart attack", "pain in chest", "shortness of breath", "nausea", "pain radiating to arm or jaw"],
+    "response": "Call emergency services immediately. Have the person rest and avoid exertion. If trained, administer aspirin unless contraindicated."
+  },
+  {
+    "patterns": ["head injury", "concussion", "loss of consciousness", "dizziness after head trauma"],
+    "response": "Keep the person still. Apply a cold compress to reduce swelling. Seek emergency medical help."
+  },
+  {
+    "patterns": ["broken bone", "fracture", "deformity in limb", "pain at injury site"],
+    "response": "Immobilize the limb with a splint. Apply ice to reduce swelling. Seek emergency medical help."
+  },
+  {
+    "patterns": ["heat stroke", "high body temperature", "confusion", "hot dry skin", "rapid pulse"],
+    "response": "Move the person to a cooler place. Apply cool, wet cloths. Offer water if conscious. Seek emergency medical help."
+  },
+  {
+    "patterns": ["hypothermia", "low body temperature", "shivering", "slurred speech", "confusion in cold environment"],
+    "response": "Move the person to a warmer place. Remove wet clothing. Warm the person gradually. Seek emergency medical help."
+  },
+  {
+    "patterns": ["poisoning", "ingestion of harmful substance", "nausea", "vomiting", "confusion after exposure to toxic substance"],
+    "response": "Identify the substance ingested. Call Poison Control or emergency services immediately."
+  },
+  {
+    "patterns": ["nosebleed", "epistaxis", "bleeding from nostrils", "blood from nose"],
+    "response": "Pinch the nostrils together and lean forward. Apply a cold compress to the back of the neck. Seek medical help if bleeding persists."
+  },
+  {
+    "patterns": ["foreign object in eye", "object stuck in eye", "eye irritation", "painful eye"],
+    "response": "Do not rub the eye. Flush with clean water. Seek medical help if the object remains."
+  },
+  {
+    "patterns": ["foreign object in ear", "object stuck in ear", "ear pain", "hearing loss after inserting object"],
+    "response": "Do not insert objects into the ear. Seek medical help for safe removal."
+  },
+  {
+    "patterns": ["foreign object in nose", "object stuck in nose", "nasal obstruction", "difficulty breathing through nose"],
+    "response": "Do not insert objects into the nose. Seek medical help for safe removal."
+  },
+  {
+    "patterns": ["toothache", "pain in tooth", "swelling around tooth", "sensitive tooth"],
+    "response": "Rinse mouth with warm water. Apply a cold compress to the outside of the cheek. Seek dental care."
+  },
+  {
+    "patterns": ["animal bite", "dog bite", "cat bite", "bite wound", "puncture wound from animal"],
+    "response": "Clean the wound with soap and water. Apply an antiseptic. Seek medical help for rabies risk assessment."
+  },
+  {
+    "patterns": ["human bite", "bite wound", "puncture wound from human", "oral wound"],
+    "response": "Clean the wound with soap and water. Apply an antiseptic. Seek medical help for infection risk."
+  },
+  {
+    "patterns": ["snake bite", "venomous bite", "swelling at bite site", "two puncture wounds from snake"],
+    "response": "Keep the person calm and still. Immobilize the affected limb. Seek emergency medical help immediately."
+  },
+  {
+    "patterns": ["spider bite", "redness at bite site", "swelling", "pain after spider bite"],
+    "response": "Clean the bite area with soap and water. Apply a cold compress. Seek medical help if symptoms worsen."
+  },
+  {
+    "patterns": ["tick bite", "insect bite", "rash after tick bite", "fever after tick exposure"],
+    "response": "Remove the tick carefully with tweezers. Clean the bite area. Seek medical help if symptoms develop."
+  },
+  {
+    "patterns": ["sunburn", "red skin after sun exposure", "painful skin", "blisters from sunburn"],
+    "response": "Cool the skin with cold compresses. Apply aloe vera gel. Drink plenty of fluids."
+  },
+  {
+    "patterns": ["hypoglycemia", "low blood sugar", "shaking", "sweating", "confusion", "dizziness"],
+    "response": "Give the person a fast-acting carbohydrate like glucose tablets or juice. Seek medical help if symptoms persist."
+  },
+  {
+    "patterns": ["hyperglycemia", "high blood sugar", "frequent urination", "thirst", "fatigue"],
+    "response": "Encourage the person to take their prescribed insulin. Seek medical help if symptoms worsen."
+  },
+  {
+    "patterns": ["asthma attack", "wheezing", "shortness of breath", "coughing", "chest tightness"],
+    "response": "Have the person use their prescribed inhaler. Encourage slow, deep breaths. Seek medical help if symptoms persist."
+  },
+  {
+    "patterns": ["allergic reaction", "hives", "swelling", "itching", "difficulty breathing after exposure to allergen"],
+    "response": "Administer antihistamines if available. Seek medical help if symptoms worsen."
+  },
+  {
+    "patterns": ["drowning", "submersion in water", "unconscious in water", "difficulty breathing after water exposure"],
+    "response": "Remove the person from water immediately. Begin CPR if trained. Seek emergency medical help."
+  },
+  {
+    "patterns": ["electric shock", "shock from electrical source", "burns from electricity", "unconscious after electrical contact"],
+    "response": "Turn off the power source if safe to do so. Do not touch the person until the power is off. Seek emergency medical help."
+  },
+  {
+    "patterns": ["drug overdose", "excessive drug intake", "unresponsiveness", "slow breathing", "pinpoint pupils"],
+    "response": "Call emergency services immediately. Provide information on the substance ingested. Do not leave the person alone."
+  },
+  {
+    "patterns": ["alcohol poisoning", "intoxication", "vomiting", "confusion", "slow or irregular breathing"],
+    "response": "Call emergency services immediately. Keep the person awake and sitting up if possible."
+  },
+  {
+    "patterns": ["severe dehydration", "dry mouth", "dizziness", "dark urine", "fatigue"],
+    "response": "Encourage the person to drink water or oral rehydration solutions. Seek medical help if symptoms persist."
+  },
+  {
+    "patterns": ["heat exhaustion", "heavy sweating", "weakness", "dizziness", "nausea in hot environment"],
+    "response": "Move the person to a cooler place. Offer cool water. Apply cool compresses."
+  },
+  {
+    "patterns": ["stroke", "sudden numbness", "difficulty speaking", "vision problems", "weakness on one side of body"],
+    "response": "Use the FAST acronym: Face drooping, Arm weakness, Speech difficulty, Time to call emergency services."
+  },
+  {
+    "patterns": ["heart attack", "pain in chest", "shortness of breath", "nausea", "pain radiating to arm or jaw"],
+    "response": "Call emergency services immediately. Have the person rest and avoid exertion. If trained, administer aspirin unless contraindicated."
+  },
+  {
+    "patterns": ["cardiac arrest", "unconscious", "no pulse", "no breathing", "collapsed person"],
+    "response": "Begin CPR immediately. Use an AED if available. Call emergency services."
+  },
+  {
+    "patterns": ["severe bleeding", "heavy bleeding", "wound bleeding heavily", "deep cut bleeding"],
+    "response": "Apply firm, direct pressure to the wound with a clean cloth. If bleeding doesn't stop, use a tourniquet above the wound and seek emergency medical help."
+  },
+  {
+    "patterns": ["sleep hygiene", "tips for better sleep", "improve sleep quality", "how to sleep better"],
+    "response": "Maintain a consistent sleep schedule, create a relaxing bedtime routine, and limit screen time before bed."
+  },
+  {
+    "patterns": ["hydration tips", "how much water to drink", "stay hydrated", "importance of water intake"],
+    "response": "Aim to drink at least 8 glasses of water daily. Adjust intake based on activity level and climate."
+  },
+  {
+    "patterns": ["stress management", "reduce stress", "stress relief techniques", "manage stress effectively"],
+    "response": "Practice relaxation techniques such as deep breathing, meditation, and regular physical activity."
+  },
+  {
+    "patterns": ["balanced diet", "healthy eating habits", "nutritious diet", "meal planning tips"],
+    "response": "Consume a variety of foods, including fruits, vegetables, whole grains, and lean proteins. Limit intake of saturated fats and added sugars."
+  },
+  {
+    "patterns": ["mental health tips", "improve mental well-being", "mental wellness strategies", "boost mental health"],
+    "response": "Engage in regular physical activity, maintain social connections, and seek professional help when needed."
+  },
+  {
+    "patterns": ["immune system support", "boost immunity", "strengthen immune system", "immune health tips"],
+    "response": "Eat a balanced diet rich in vitamins and minerals, get regular exercise, and ensure adequate sleep."
+  },
+  {
+    "patterns": ["heart health", "improve cardiovascular health", "heart-healthy habits", "prevent heart disease"],
+    "response": "Engage in regular physical activity, eat a diet low in saturated fats and cholesterol, and avoid smoking."
+  },
+  {
+    "patterns": ["bone health", "strong bones", "prevent osteoporosis", "bone-strengthening exercises"],
+    "response": "Consume adequate calcium and vitamin D, engage in weight-bearing exercises, and avoid smoking."
+  },
+  {
+    "patterns": ["digestive health", "improve digestion", "gut health tips", "healthy digestion habits"],
+    "response": "Eat a diet high in fiber, stay hydrated, and manage stress levels."
+  },
+  {
+    "patterns": ["skin care tips", "healthy skin habits", "improve skin health", "prevent skin issues"],
+    "response": "Cleanse your skin regularly, use sunscreen, and stay hydrated."
+  },
+  {
+    "patterns": ["eye health", "protect your eyes", "eye care tips", "prevent eye strain"],
+    "response": "Take regular breaks from screens, wear protective eyewear, and maintain a healthy diet."
+  },
+  {
+    "patterns": ["healthy aging", "tips for aging well", "maintain health in older age", "aging gracefully"],
+    "response": "Engage in regular physical activity, maintain a balanced diet, and stay socially active."
+  },
+  {
+    "patterns": ["weight management", "healthy weight loss", "maintain healthy weight", "weight control tips"],
+    "response": "Combine a balanced diet with regular physical activity and monitor your progress regularly."
+  },
+  {
+    "patterns": ["hydration for skin", "water intake for skin health", "stay hydrated for glowing skin", "importance of water for skin"],
+    "response": "Drink adequate water daily to maintain skin elasticity and prevent dryness."
+  },
+  {
+    "patterns": ["healthy snacks", "nutritious snack ideas", "quick healthy snacks", "easy healthy snacks"],
+    "response": "Choose snacks that are high in fiber and protein, such as fruits, nuts, and yogurt."
+  },
+  {
+    "patterns": ["meal prepping", "plan meals ahead", "healthy meal prep", "meal preparation tips"],
+    "response": "Prepare meals in advance to ensure balanced nutrition and save time during the week."
+  },
+  {
+    "patterns": ["portion control", "manage portion sizes", "portion control tips", "eat in moderation"],
+    "response": "Use smaller plates, read food labels, and avoid eating straight from packages."
+  },
+  {
+    "patterns": ["caffeine intake", "limit caffeine", "caffeine consumption tips", "reduce caffeine"],
+    "response": "Limit caffeine intake to 400 mg per day and avoid consuming it late in the day."
+  },
+  {
+    "patterns": ["alcohol consumption", "limit alcohol", "moderate drinking", "alcohol intake tips"],
+    "response": "If you choose to drink, do so in moderation—up to one drink per day for women and two for men."
+  },
+  {
+    "patterns": ["quit smoking", "stop smoking tips", "smoking cessation", "how to quit smoking"],
+    "response": "Seek support through counseling, medications, and support groups to quit smoking."
+  },
+  {
+    "patterns": ["preventive healthcare", "regular check-ups", "health screenings", "preventive health tips"],
+    "response": "Schedule regular health check-ups and screenings as recommended by your healthcare provider."
+  },
+  {
+    "patterns": ["disease prevention", "prevent chronic diseases", "reduce disease risk", "health risk reduction"],
+    "response": "Maintain a healthy lifestyle with regular exercise, balanced diet, and regular health screenings."
+  },
+  {
+    "patterns": ["hydration for energy", "boost energy with water", "stay hydrated for energy", "water intake for energy"],
+    "response": "Drink water throughout the day to maintain energy levels and prevent fatigue."
+  },
+  {
+    "patterns": ["healthy fats", "incorporate healthy fats", "benefits of healthy fats", "healthy fat sources"],
+    "response": "Include sources of unsaturated fats in your diet, such as avocados, nuts, and olive oil."
+  },
+  {
+    "patterns": ["fiber intake", "increase fiber", "benefits of fiber", "high-fiber foods"],
+    "response": "Consume a variety of fiber-rich foods, including fruits, vegetables, whole grains, and legumes."
+  },
+  {
+    "patterns": ["sugar intake", "limit added sugars", "reduce sugar consumption", "cut down on sugar"],
+    "response": "Read food labels, choose unsweetened products, and limit sugary beverages."
+  },
+  {
+    "patterns": ["salt intake", "reduce sodium", "limit salt consumption", "cut down on salt"],
+    "response": "Use herbs and spices for flavoring, choose low-sodium products, and limit processed foods."
+  },
+  {
+    "patterns": ["meal timing", "when to eat", "best time to eat meals", "meal timing tips"],
+    "response": "Eat regular meals and snacks throughout the day to maintain energy levels and prevent overeating."
+  },
+  {
+    "patterns": ["intermittent fasting", "benefits of intermittent fasting", "intermittent fasting tips", "how to do intermittent fasting"],
+    "response": "Consult with a healthcare provider before starting intermittent fasting to ensure it's appropriate for you."
+  },
+  {
+    "patterns": ["mindful eating", "practice mindful eating", "benefits of mindful eating", "how to eat mindfully"],
+    "response": "Eat slowly, pay attention to hunger and fullness cues, and avoid distractions during meals."
+  },
+  {
+    "patterns": ["food allergies", "manage food allergies", "food allergy tips", "avoid allergens"],
+    "response": "Read food labels carefully, communicate with restaurants, and carry necessary medications."
+  },
+  {
+    "patterns": ["healthy cooking methods", "cook healthy meals", "healthy cooking tips", "low-fat cooking methods"],
+    "response": "Use cooking methods such as grilling, baking, steaming, and sautéing with minimal oil."
+  },
+  {
+    "patterns": ["meal variety", "eat a variety of foods", "balanced diet variety", "diverse meals"],
+    "response": "Include a wide range of foods in your diet to ensure adequate nutrient intake."
+  },
+  {
+    "patterns": ["healthy grocery shopping", "grocery shopping tips", "buy healthy foods", "smart grocery shopping"],
+    "response": "Plan meals ahead, make a shopping list, and shop the perimeter of the store for fresh produce."
+  },
+  {
+    "patterns": ["food preparation", "prepare meals in advance", "meal prep tips", "healthy food prep"],
+    "response": "Batch cook meals, use portion containers, and store meals properly to save time and ensure balanced nutrition."
+  },
+  {
+    "patterns": ["eating out", "healthy choices when eating out", "dining out tips", "make healthy choices at restaurants"],
+    "response": "Review menus ahead of time, ask for dressings and sauces on the side, and choose grilled or baked options."
+  },
+  {
+    "patterns": ["food labels", "understand food labels", "read nutrition labels", "food label tips"],
+    "response": "Check serving sizes, look for added sugars, and choose products with higher fiber content."
+  },
+  {
+    "patterns": ["cooking at home", "benefits of cooking at home", "home cooking tips", "cook meals at home"],
+    "response": "Cooking at home allows you to control ingredients, portion sizes, and nutritional content."
+  },
+  {
+    "patterns": ["eating habits", "improve eating habits", "healthy eating habits", "change eating habits"],
+    "response": "Set realistic goals, track your progress, and seek support when needed to develop healthy eating habits."
+  },
+  {
+    "patterns": ["healthy lifestyle", "adopt a healthy lifestyle", "lifestyle changes for health", "improve lifestyle"],
+    "response": "Incorporate regular physical activity, balanced nutrition, adequate sleep, and stress management into your daily routine."
+  },
+  {
+    "patterns": ["exercise routines", "workout plans", "fitness schedules", "physical activity tips", "exercise programs"],
+    "response": "Aim for at least 150 minutes of moderate-intensity or 75 minutes of vigorous-intensity exercise each week, along with strength training exercises on two or more days per week."
+  },
+  {
+    "patterns": ["stress management techniques", "stress reduction methods", "coping with stress", "relaxation strategies", "managing anxiety"],
+    "response": "Practice mindfulness, deep breathing exercises, and meditation. Regular physical activity and adequate sleep also play crucial roles in managing stress."
+  },
+  {
+    "patterns": ["balanced diet tips", "healthy eating advice", "nutritious meal ideas", "dietary guidelines", "eating habits"],
+    "response": "Consume a variety of fruits, vegetables, whole grains, and lean proteins. Limit intake of saturated fats, added sugars, and sodium."
+  },
+  {
+    "patterns": ["quitting smoking advice", "stop smoking tips", "smoking cessation strategies", "how to quit smoking", "smoking help"],
+    "response": "Seek support through counseling or smoking cessation programs. Consider nicotine replacement therapies and identify triggers to develop coping strategies."
+  },
+  {
+    "patterns": ["limiting alcohol consumption", "reducing alcohol intake", "moderate drinking tips", "alcohol moderation", "cutting down on alcohol"],
+    "response": "Limit alcohol intake to up to one drink per day for women and up to two drinks per day for men. Seek support if you find it challenging to reduce consumption."
+  },
+  {
+    "patterns": ["healthy sleep habits", "improving sleep quality", "better sleep tips", "sleep hygiene", "insomnia solutions"],
+    "response": "Maintain a consistent sleep schedule, create a relaxing bedtime routine, and ensure your sleep environment is conducive to rest."
+  },
+  {
+    "patterns": ["hydration tips", "drinking enough water", "water intake guidelines", "staying hydrated", "fluid consumption advice"],
+    "response": "Aim for about 2.7 liters (9 cups) of water per day for women and 3.7 liters (13 cups) for men, adjusting based on activity level and climate."
+  },
+  {
+    "patterns": ["mental health practices", "improving mental well-being", "mental wellness tips", "coping with depression", "anxiety management"],
+    "response": "Engage in regular physical activity, maintain social connections, and seek professional support when needed."
+  },
+  {
+    "patterns": ["heart health habits", "cardiovascular wellness", "preventing heart disease", "heart-healthy lifestyle", "reducing heart disease risk"],
+    "response": "Incorporate regular physical activity, a balanced diet, and stress management techniques to support heart health."
+  },
+  {
+    "patterns": ["bone health tips", "preventing osteoporosis", "bone-strengthening exercises", "calcium-rich foods", "vitamin D sources"],
+    "response": "Engage in weight-bearing exercises, consume calcium-rich foods like dairy products, and ensure adequate vitamin D intake."
+  },
+  {
+    "patterns": ["eye care advice", "protecting vision", "preventing eye strain", "eye health tips", "vision protection"],
+    "response": "Wear sunglasses to protect against UV rays, take regular breaks from screens, and schedule regular eye exams."
+  },
+  {
+    "patterns": ["skin health practices", "preventing skin aging", "sun protection tips", "skincare routines", "avoiding skin damage"],
+    "response": "Apply sunscreen daily, avoid tanning beds, and moisturize regularly to maintain healthy skin."
+  },
+  {
+    "patterns": ["dental hygiene tips", "oral health practices", "preventing cavities", "brushing and flossing", "dental care advice"],
+    "response": "Brush teeth twice daily with fluoride toothpaste, floss regularly, and visit the dentist for routine check-ups."
+  },
+  {
+    "patterns": ["weight management strategies", "losing weight tips", "maintaining healthy weight", "diet and exercise plan", "calorie control"],
+    "response": "Combine a balanced diet with regular physical activity. Aim for gradual weight loss through sustainable lifestyle changes."
+  },
+  {
+    "patterns": ["immune system support", "boosting immunity", "immune-boosting foods", "preventing illness", "healthy immune function"],
+    "response": "Consume a diet rich in fruits, vegetables, and lean proteins. Ensure adequate sleep and regular physical activity."
+  },
+  {
+    "patterns": ["gut health tips", "digestive wellness", "preventing bloating", "healthy digestion", "probiotic foods"],
+    "response": "Include fiber-rich foods in your diet, stay hydrated, and consider incorporating probiotics to support gut health."
+  },
+  {
+    "patterns": ["healthy aging practices", "preventing age-related diseases", "aging gracefully", "senior health tips", "maintaining mobility"],
+    "response": "Engage in regular physical activity, maintain a balanced diet, and stay socially connected to support healthy aging."
+  },
+  {
+    "patterns": ["healthy cooking tips", "nutritious meal preparation", "home-cooked meals", "cooking at home", "meal planning advice"],
+    "response": "Plan meals ahead, use fresh ingredients, and limit the use of processed foods to create nutritious home-cooked meals."
+  },
+  {
+    "patterns": ["healthy snack ideas", "nutritious snacks", "low-calorie snacks", "energy-boosting snacks", "snack alternatives"],
+    "response": "Choose snacks like fruits, nuts, yogurt, or whole-grain crackers to satisfy hunger between meals."
+  },
+  {
+    "patterns": ["portion control strategies", "eating smaller portions", "controlling food intake", "mindful eating", "reducing overeating"],
+    "response": "Use smaller plates, pay attention to hunger cues, and avoid distractions while eating to help control portion sizes."
+  },
+  {
+    "patterns": ["meal timing tips", "eating schedule", "intermittent fasting", "meal frequency", "timing meals for health"],
+    "response": "Establish regular meal times, and consider consulting with a healthcare professional before making significant changes to meal timing."
+  },
+  {
+    "patterns": ["social connection importance", "maintaining relationships", "social well-being", "community involvement", "support networks"],
+    "response": "Engage in regular social activities, maintain relationships with family and friends, and participate in community events."
+  },
+  {
+    "patterns": ["sun protection habits", "avoiding sunburn", "UV protection", "skin cancer prevention", "sun safety tips"],
+    "response": "Apply sunscreen with broad-spectrum protection, wear protective clothing, and seek shade during peak sun hours."
+  },
+  {
+    "patterns": ["caffeine consumption moderation", "reducing caffeine intake", "avoiding excessive caffeine", "caffeine alternatives", "healthy beverage choices"],
+    "response": "Limit caffeine intake to recommended levels, and consider herbal teas or water as alternatives to caffeinated beverages."
+  },
+  {
+    "patterns": ["alcohol-free days", "reducing alcohol consumption", "sober days", "alcohol moderation", "cutting down on drinking"],
+    "response": "Designate alcohol-free days each week to reduce overall consumption and assess personal drinking habits."
+  },
+  {
+    "patterns": ["tobacco-free lifestyle", "avoiding secondhand smoke", "smoking alternatives", "quit smoking support", "smoking cessation resources"],
+    "response": "Seek support through counseling, nicotine replacement therapies, and avoid environments where smoking is prevalent."
+  },
+  {
+    "patterns": ["cardiovascular fitness exercises", "heart health workouts", "aerobic activities", "improving circulation", "endurance training"],
+    "response": "Engage in activities like brisk walking, cycling, or swimming to improve cardiovascular fitness."
+  },
+  {
+    "patterns": ["strength training routines", "muscle-building exercises", "resistance workouts", "weightlifting tips", "building muscle mass"],
+    "response": "Incorporate exercises like squats, push-ups, and weightlifting into your routine to build and maintain muscle strength."
+  },
+  {
+    "patterns": ["aerobic exercise benefits", "cardio workouts", "improving stamina", "fat-burning exercises", "endurance activities"],
+    "response": "Participate in activities like running, cycling, or dancing to enhance aerobic capacity and overall stamina."
+  },
+  {
+    "patterns": ["relaxation techniques for stress", "deep breathing exercises", "progressive muscle relaxation", "guided imagery", "stress relief methods"],
+    "response": "Practice deep breathing exercises, progressive muscle relaxation, or guided imagery to reduce stress levels."
+  },
+  {
+    "patterns": ["healthy eating on a budget", "affordable nutritious meals", "cost-effective healthy foods", "budget-friendly diet", "eating well for less"],
+    "response": "Plan meals ahead, buy in bulk, and choose seasonal produce to maintain a healthy diet without overspending."
+  },
+  {
+    "patterns": ["meal prepping for health", "healthy meal preparation", "batch cooking", "weekly meal planning", "preparing meals in advance"],
+    "response": "Prepare meals in advance to ensure balanced nutrition and save time during the week."
+  },
+  {
+    "patterns": ["positive thinking habits", "optimism practices", "mental attitude", "cognitive reframing", "building resilience"],
+    "response": "Cultivate a positive mindset through gratitude practices, affirmations, and focusing on strengths."
+  },
+  {
+    "patterns": ["self-care routines", "personal wellness practices", "daily self-care", "stress-relief activities", "self-compassion exercises"],
+    "response": "Incorporate activities like journaling, baths, or hobbies into your daily routine to promote self-care."
+  },
+  {
+    "patterns": ["time management for health", "balancing health and schedule", "prioritizing wellness", "healthy routine planning", "managing time for well-being"],
+    "response": "Allocate time for physical activity, meal preparation, and relaxation to maintain a balanced lifestyle."
+  },
+  {
+    "patterns": ["gratitude practices", "appreciation exercises", "positive reflection", "thankfulness habits", "enhancing well-being through gratitude"],
+    "response": "Keep a gratitude journal, express appreciation to others, and reflect on positive experiences regularly."
+  },
+  
+  {
+    "patterns": ["seasonal flu India", "flu season India", "H1N1 India", "seasonal influenza India", "flu outbreaks India"],
+    "response": "Seasonal influenza, including H1N1, typically peaks during the monsoon and post-monsoon months in India. It's essential to get vaccinated and practice good hygiene to prevent its spread."
+  },
+  {
+    "patterns": ["dengue fever India", "dengue outbreaks India", "dengue prevention India", "dengue symptoms India", "dengue cases India"],
+    "response": "Dengue fever is prevalent during the monsoon season in India. Preventive measures include eliminating mosquito breeding sites and using mosquito repellents."
+  },
+  {
+    "patterns": ["malaria India", "malaria prevention India", "malaria symptoms India", "malaria outbreaks India", "malaria cases India"],
+    "response": "Malaria transmission is highest during the monsoon season in India. Preventive measures include using insecticide-treated bed nets and taking antimalarial medications as prescribed."
+  },
+  {
+    "patterns": ["chikungunya India", "chikungunya outbreaks India", "chikungunya prevention India", "chikungunya symptoms India", "chikungunya cases India"],
+    "response": "Chikungunya is transmitted by Aedes mosquitoes and is common during the monsoon season. Preventive measures include eliminating mosquito breeding sites and using mosquito repellents."
+  },
+  {
+    "patterns": ["heatstroke India", "heatstroke prevention India", "heatstroke symptoms India", "heatstroke treatment India", "heat-related illnesses India"],
+    "response": "Heatstroke is a serious condition that can occur during extreme heat. Preventive measures include staying hydrated, avoiding direct sunlight, and wearing light-colored clothing."
+  },
+  {
+    "patterns": ["allergies India", "seasonal allergies India", "pollen allergies India", "dust allergies India", "allergy symptoms India"],
+    "response": "Seasonal allergies are common during the spring and autumn months in India. Managing allergies includes avoiding known allergens and using antihistamines as prescribed."
+  },
+  {
+    "patterns": ["air pollution India", "smog in India", "PM2.5 levels India", "air quality India", "respiratory issues India"],
+    "response": "Air pollution, especially during winter, can exacerbate respiratory conditions. Limiting outdoor activities and wearing masks can help reduce exposure."
+  },
+  {
+    "patterns": ["waterborne diseases India", "cholera India", "typhoid India", "diarrheal diseases India", "water contamination India"],
+    "response": "Waterborne diseases are prevalent during the monsoon season in India. Preventive measures include drinking boiled or filtered water and practicing good hygiene."
+  },
+  {
+    "patterns": ["vector-borne diseases India", "Japanese encephalitis India", "scrub typhus India", "leptospirosis India", "zoonotic diseases India"],
+    "response": "Vector-borne diseases are common during the monsoon season in India. Preventive measures include using insect repellents and avoiding contact with animals."
+  },
+  {
+    "patterns": ["tuberculosis India", "TB seasonality India", "TB outbreaks India", "TB prevention India", "TB symptoms India"],
+    "response": "Tuberculosis cases in India show seasonal variation, with increased incidence during the cooler months. Early diagnosis and adherence to treatment are crucial."
+  },
+  {
+    "patterns": ["pneumonia India", "pneumonia seasonality India", "pneumonia outbreaks India", "pneumonia prevention India", "pneumonia symptoms India"],
+    "response": "Pneumonia cases in India often increase during the winter months. Preventive measures include vaccination and avoiding exposure to cold air."
+  },
+  {
+    "patterns": ["Hepatitis E India", "Hepatitis E outbreaks India", "Hepatitis E prevention India", "Hepatitis E symptoms India", "Hepatitis E cases India"],
+    "response": "Hepatitis E outbreaks are common during the monsoon season in India due to water contamination. Preventive measures include drinking boiled or filtered water and practicing good hygiene."
+  },
+  {
+    "patterns": ["swine flu India", "H1N1 outbreaks India", "swine flu prevention India", "swine flu symptoms India", "swine flu cases India"],
+    "response": "Swine flu, caused by the H1N1 virus, can occur year-round in India. Preventive measures include vaccination and practicing good hygiene."
+  },
+  {
+    "patterns": ["bird flu India", "avian influenza India", "bird flu prevention India", "bird flu symptoms India", "bird flu cases India"],
+    "response": "Bird flu outbreaks are rare but can occur in India. Preventive measures include avoiding contact with sick poultry and following health advisories."
+  },
+  {
+    "patterns": ["hand foot mouth disease India", "HFMD outbreaks India", "HFMD prevention India", "HFMD symptoms India", "HFMD cases India"],
+    "response": "Hand, foot, and mouth disease is common among children in India. Preventive measures include good hand hygiene and avoiding close contact with infected individuals."
+  },
+  {
+    "patterns": ["dengue vaccine India", "dengue vaccination India", "dengue prevention vaccine India", "dengue immunization India", "dengue vaccine availability India"],
+    "response": "The dengue vaccine is available in India for individuals aged 9-45 years. Consult a healthcare provider to determine eligibility."
+  },
+  {
+    "patterns": ["malaria vaccine India", "malaria immunization India", "malaria prevention vaccine India", "malaria vaccine availability India", "malaria vaccination India"],
+    "response": "The malaria vaccine is not yet widely available in India. Preventive measures include using insecticide-treated bed nets and taking antimalarial medications as prescribed."
+  },
+  {
+    "patterns": ["chikungunya vaccine India", "chikungunya immunization India", "chikungunya prevention vaccine India", "chikungunya vaccine availability India", "chikungunya vaccination India"],
+    "response": "There is no vaccine for chikungunya currently available in India. Preventive measures include eliminating mosquito breeding sites and using mosquito repellents."
+  },
+  {
+    "patterns": ["heatstroke prevention tips", "avoiding heatstroke India", "heatstroke first aid India", "heatstroke symptoms India", "heatstroke treatment India"],
+    "response": "Preventive measures for heatstroke include staying hydrated, avoiding direct sunlight, and wearing light-colored clothing. Seek medical attention if symptoms persist."
+  },
+  {
+    "patterns": ["allergy relief India", "seasonal allergy treatment India", "allergy medications India", "allergy management India", "allergy symptoms relief India"],
+    "response": "Managing seasonal allergies includes avoiding known allergens, using antihistamines as prescribed, and keeping windows closed during high pollen seasons."
+  },
+  {
+    "patterns": ["air pollution health effects India", "smog health risks India", "PM2.5 health impact India", "respiratory diseases India", "air quality monitoring India"],
+    "response": "Exposure to high levels of air pollution can lead to respiratory issues. Limiting outdoor activities and wearing masks can help reduce exposure."
+  },
+  {
+    "patterns": ["waterborne disease prevention India", "cholera prevention India", "typhoid prevention India", "diarrheal disease prevention India", "safe drinking water India"],
+    "response": "Preventive measures include drinking boiled or filtered water, practicing good hygiene, and avoiding consumption of raw or undercooked food."
+  },
+  {
+    "patterns": ["vector control India", "mosquito control India", "malaria prevention India", "dengue prevention India", "chikungunya prevention India"],
+    "response": "Eliminating mosquito breeding sites, using insect repellents, and wearing protective clothing can help prevent vector-borne diseases."
+  },
+  {
+    "patterns": ["tuberculosis prevention India", "TB vaccination India", "TB treatment India", "TB awareness India", "TB symptoms India"],
+    "response": "Preventive measures include vaccination with the BCG vaccine, early diagnosis, and adherence to prescribed treatment regimens."
+  },
+  {
+    "patterns": ["pneumonia prevention India", "pneumonia vaccination India", "pneumonia treatment India", "pneumonia awareness India", "pneumonia symptoms India"],
+    "response": "Vaccination, avoiding exposure to cold air, and maintaining good respiratory hygiene can help prevent pneumonia."
+  },
+  {
+    "patterns": ["Hepatitis E prevention India", "Hepatitis E vaccination India", "Hepatitis E treatment India", "Hepatitis E awareness India", "Hepatitis E symptoms India"],
+    "response": "Preventive measures include drinking boiled or filtered water, practicing good hygiene, and avoiding consumption of raw or undercooked food."
+  },
+  {
+    "patterns": ["swine flu prevention India", "H1N1 vaccination India", "swine flu treatment India", "swine flu awareness India", "swine flu symptoms India"],
+    "response": "Preventive measures include vaccination, practicing good hygiene, and avoiding close contact with infected individuals."
+  },
+  {
+    "patterns": ["bird flu prevention India", "avian influenza vaccination India", "bird flu treatment India", "bird flu awareness India", "bird flu symptoms India"],
+    "response": "Preventive measures include avoiding contact with sick poultry, following health advisories, and practicing good hygiene."
+  },
+  {
+    "patterns": ["hand foot mouth disease prevention India", "HFMD vaccination India", "HFMD treatment India", "HFMD awareness India", "HFMD symptoms India"],
+    "response": "Preventive measures include good hand hygiene, avoiding close contact with infected individuals, and keeping children's toys clean."
+  },
+  {
+    "patterns": ["dengue vaccine availability India", "dengue vaccination schedule India", "dengue vaccine cost India", "dengue vaccine side effects India", "dengue vaccine eligibility India"],
+    "response": "Consult a healthcare provider to determine eligibility for the dengue vaccine, as it is available for individuals aged 9-45 years."
+  },
+  {
+    "patterns": ["childhood vaccinations", "vaccines for children in India", "immunization schedule for kids", "childhood immunization", "vaccination requirements for children"],
+    "response": "In India, children should receive vaccines like BCG, Hepatitis B, DPT, Polio, Hib, PCV, Rotavirus, MMR, Varicella, Hepatitis A, Typhoid, HPV, MCV, and Influenza as per the Indian Academy of Pediatrics schedule to protect against various diseases."
+  },
+  {
+    "patterns": ["pediatric nutrition", "healthy diet for children", "childhood obesity prevention", "nutritional needs of children", "balanced diet for kids"],
+    "response": "A balanced diet for children includes fruits, vegetables, whole grains, lean proteins, and dairy. Limiting processed foods and sugary drinks can help prevent childhood obesity, which is projected to nearly double in the next 20 years in India."
+  },
+  {
+    "patterns": ["childhood physical activity", "exercise for children", "screen time guidelines for kids", "promoting physical activity in children", "reducing screen time for children"],
+    "response": "Encouraging outdoor play, sports, and limiting screen time to less than two hours per day can promote physical activity in children and reduce the risk of obesity and related health issues."
+  },
+  {
+    "patterns": ["childhood dental care", "oral hygiene for children", "teething problems in infants", "dental check-ups for kids", "preventing cavities in children"],
+    "response": "Regular brushing with fluoride toothpaste, limiting sugary snacks, and scheduling dental check-ups can help maintain good oral hygiene and prevent dental problems in children."
+  },
+  {
+    "patterns": ["childhood sleep patterns", "sleep needs for children", "bedtime routines for kids", "improving sleep in children", "sleep disorders in children"],
+    "response": "Establishing a consistent bedtime routine, ensuring a comfortable sleep environment, and limiting caffeine and screen time before bed can improve sleep quality in children."
+  },
+  {
+    "patterns": ["elderly health care", "geriatric health tips", "aging and health", "senior citizen health", "elderly care in India"],
+    "response": "Elderly individuals should engage in regular physical activity, maintain a balanced diet, avoid tobacco and excessive alcohol, and seek regular medical check-ups to promote healthy aging."
+  },
+  {
+    "patterns": ["mental health in elderly", "depression in seniors", "cognitive health in elderly", "elderly mental well-being", "aging and mental health"],
+    "response": "Maintaining social connections, engaging in mentally stimulating activities, and seeking professional help when needed can support mental health in elderly individuals."
+  },
+  {
+    "patterns": ["elderly nutrition", "diet for seniors", "nutritional needs of elderly", "healthy eating for seniors", "elderly dietary guidelines"],
+    "response": "A diet rich in fiber, lean proteins, fruits, vegetables, and low in sodium and saturated fats can help meet the nutritional needs of elderly individuals and prevent chronic diseases."
+  },
+  {
+    "patterns": ["elderly physical activity", "exercise for seniors", "mobility in elderly", "preventing falls in elderly", "physical fitness for seniors"],
+    "response": "Regular physical activity, such as walking, yoga, or strength training, can improve mobility, balance, and overall health in elderly individuals, reducing the risk of falls."
+  },
+  {
+    "patterns": ["elderly sleep patterns", "sleep disorders in elderly", "improving sleep in seniors", "sleep hygiene for elderly", "insomnia in elderly"],
+    "response": "Establishing a regular sleep schedule, creating a comfortable sleep environment, and avoiding stimulants before bedtime can improve sleep quality in elderly individuals."
+  },
+  {
+    "patterns": ["elderly vaccinations", "vaccines for seniors", "immunization in elderly", "preventing infections in elderly", "flu vaccine for seniors"],
+    "response": "Elderly individuals should receive vaccines like the annual flu vaccine, pneumococcal vaccine, and shingles vaccine as recommended by healthcare providers to prevent infections."
+  },
+  {
+    "patterns": ["pregnancy care", "prenatal health tips", "healthy pregnancy in India", "pregnancy diet", "exercise during pregnancy"],
+    "response": "Maintaining a balanced diet, taking prenatal vitamins, engaging in regular physical activity, and attending regular prenatal check-ups are essential for a healthy pregnancy."
+  },
+  {
+    "patterns": ["folic acid during pregnancy", "importance of folic acid", "preventing neural tube defects", "folic acid supplements", "folic acid before conception"],
+    "response": "Taking folic acid supplements at least two months before conception and during early pregnancy can reduce the risk of neural tube defects by up to 80%."
+  },
+  {
+    "patterns": ["gestational diabetes", "managing gestational diabetes", "blood sugar levels during pregnancy", "gestational diabetes diet", "preventing gestational diabetes"],
+    "response": "Monitoring blood sugar levels, maintaining a healthy diet, and engaging in regular physical activity can help manage and prevent gestational diabetes during pregnancy."
+  },
+  {
+    "patterns": ["pregnancy complications", "high-risk pregnancy", "managing pregnancy complications", "monitoring pregnancy health", "preventing pregnancy complications"],
+    "response": "Regular prenatal check-ups, monitoring for signs of complications, and following healthcare provider recommendations can help manage and prevent pregnancy complications."
+  },
+  {
+    "patterns": ["postpartum care", "recovering after childbirth", "postpartum depression", "breastfeeding support", "postpartum exercise"],
+    "response": "Seeking support for postpartum depression, engaging in gentle physical activity, and receiving breastfeeding assistance can aid in recovery after childbirth."
+  },
+  {
+    "patterns": ["breastfeeding tips", "benefits of breastfeeding", "latching techniques", "breastfeeding positions", "breastfeeding support"],
+    "response": "Breastfeeding provides essential nutrients and antibodies to infants. Seeking guidance on latching techniques and positions can enhance the breastfeeding experience."
+  },
+  {
+    "patterns": ["pregnancy mental health", "perinatal depression", "emotional well-being during pregnancy", "mental health support for pregnant women", "stress management during pregnancy"],
+    "response": "Seeking mental health support, practicing stress management techniques, and maintaining social connections can support emotional well-being during pregnancy."
+  },
+  {
+    "patterns": ["pregnancy exercise", "safe exercises during pregnancy", "physical activity in pregnancy", "prenatal yoga", "walking during pregnancy"],
+    "response": "Engaging in safe exercises like walking and prenatal yoga can improve physical health during pregnancy. Always consult with a healthcare provider before starting any new exercise regimen."
+  },
+  {
+    "patterns": ["pregnancy travel", "traveling during pregnancy", "safe travel during pregnancy", "travel tips for pregnant women", "travel vaccinations during pregnancy"],
+    "response": "Consulting with a healthcare provider before traveling, staying hydrated, and avoiding travel to areas with high health risks can ensure safe travel during pregnancy."
+  },
+  {
+    "patterns": ["pregnancy nutrition", "diet during pregnancy", "foods to avoid during pregnancy", "healthy eating during pregnancy", "nutritional supplements during pregnancy"],
+    "response": "Consuming a balanced diet rich in fruits, vegetables, whole grains, and lean proteins, and avoiding certain foods like unpasteurized dairy and high-mercury fish, can support a healthy pregnancy."
+  },
+  {
+    "patterns": ["pregnancy weight gain", "healthy weight gain during pregnancy", "managing weight during pregnancy", "weight gain guidelines for pregnancy", "preventing excessive weight gain during pregnancy"],
+    "response": "Following healthcare provider recommendations for weight gain, maintaining a balanced diet, and engaging in regular physical activity can help manage weight during pregnancy."
+  },
+  {
+    "patterns": ["pregnancy sleep", "sleeping during pregnancy", "sleep positions during pregnancy", "insomnia during pregnancy", "improving sleep during pregnancy"],
+    "response": "Using pillows for support, sleeping on the left side, and establishing a bedtime routine can improve sleep quality during pregnancy."
+  },
+  {
+    "patterns": ["pregnancy skin care", "skin changes during pregnancy", "stretch marks prevention", "skin care tips for pregnant women", "preventing skin issues during pregnancy"],
+    "response": "Using moisturizers, staying hydrated, and protecting skin from sun exposure can help manage skin changes during pregnancy."
+  },
+  {
+    "patterns": ["pregnancy complications signs", "warning signs during pregnancy", "when to seek medical help during pregnancy", "complications during pregnancy", "monitoring pregnancy health"],
+    "response": "Recognizing warning signs like severe headaches, vision changes, or abdominal pain and seeking timely medical attention can help manage pregnancy complications."
+  },
+  {
+    "patterns": ["pregnancy planning", "preconception health", "planning for pregnancy", "preparing for pregnancy", "fertility health"],
+    "response": "Maintaining a healthy lifestyle, taking prenatal vitamins, and consulting with a healthcare provider can prepare the body for a healthy pregnancy."
+  },
+  {
+    "patterns": ["pregnancy complications prevention", "preventing preeclampsia", "preventing gestational diabetes", "preventing pregnancy complications", "healthy pregnancy practices"],
+    "response": "Regular prenatal check-ups, maintaining a healthy diet, and engaging in physical activity can help prevent common pregnancy complications."
+  },
+  {
+    "patterns": ["pregnancy support", "support during pregnancy", "partner support during pregnancy", "family support during pregnancy", "community support during pregnancy"],
+    "response": "Seeking support from partners, family, and community resources can provide emotional and practical assistance during pregnancy."
+  },
+   {
+    "patterns": ["I'm feeling overwhelmed", "I don't know if I can keep going", "Everything seems to be falling apart", "I'm struggling to stay positive", "I feel like giving up"],
+    "response": "It's okay to feel this way. You're not alone, and it's okay to take things one step at a time."
+  },
+  {
+    "patterns": ["I'm not good enough", "I can't handle this", "I'm afraid of the future", "I feel so alone", "I'm not making any progress"],
+    "response": "You are enough, just as you are. Your worth isn't defined by challenges but by your courage to face them."
+  },
+  {
+    "patterns": ["I just need someone to talk to", "I don't know how to express what I'm feeling", "I'm feeling misunderstood", "I don't know where to start", "I'm afraid of being judged"],
+    "response": "I'm here for you. Share what's on your mind, and let's talk it through together."
+  },
+  {
+    "patterns": ["I'm not sure I'll get through this", "I'm feeling hopeless", "I'm exhausted", "I'm feeling defeated", "I'm struggling to stay afloat"],
+    "response": "You are stronger than you realize. Take it one day at a time, and you'll find your way."
+  },
+  {
+    "patterns": ["I'm afraid of what's to come", "I'm feeling stuck", "I'm struggling to find purpose", "I'm feeling like I'm not moving forward", "I'm feeling like I'm not making a difference"],
+    "response": "The future is full of possibilities. Take it one day at a time, and trust that you're on the right path."
+  },
+  {
+    "patterns": ["I'm neglecting my self-care", "I'm not taking care of myself", "I'm feeling burnt out", "I'm not setting boundaries", "I'm not practicing self-love"],
+    "response": "Self-care is important. Take small steps to nurture yourself—you deserve it."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by my thoughts", "I'm struggling to find clarity", "I'm feeling conflicted", "I'm feeling uncertain", "I'm feeling indecisive"],
+    "response": "It's okay to have many thoughts. Take a moment to breathe and focus on the present."
+  },
+  {
+    "patterns": ["I'm feeling anxious", "I'm feeling fearful", "I'm feeling doubtful", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything"],
+    "response": "Anxiety and fear are natural responses. Acknowledge them, and take small steps forward."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by everything", "I'm feeling invisible", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "You are seen, you are heard, and you matter."
+  },
+  {
+    "patterns": ["I'm not sure I can trust anyone", "I'm feeling disconnected", "I'm not sure I should talk about this", "I'm scared to open up", "I feel like no one cares"],
+    "response": "This is a safe space. You're not alone, and I'm here to support you."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed", "I'm feeling like I'm not in control", "I'm feeling like I'm not good enough", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not moving forward"],
+    "response": "You are more than enough. Your worth isn't defined by challenges but by your courage to face them."
+  },
+  {
+    "patterns": ["I'm feeling stuck", "I'm struggling to find purpose", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "Purpose can be found in the smallest moments. Let's explore together."
+  },
+  {
+    "patterns": ["I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs", "I'm not taking time for myself", "I'm not practicing gratitude"],
+    "response": "Self-love is essential. Be kind to yourself, and remember that you deserve compassion."
+  },
+  {
+    "patterns": ["I'm not focusing on my strengths", "I'm not setting boundaries", "I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs"],
+    "response": "Your strengths are unique to you. Embrace them, and use them to navigate challenges."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by my thoughts", "I'm struggling to find clarity", "I'm feeling conflicted", "I'm feeling uncertain", "I'm feeling indecisive"],
+    "response": "Clarity comes with time. Be patient with yourself, and trust that answers will come."
+  },
+  {
+    "patterns": ["I'm feeling anxious", "I'm feeling fearful", "I'm feeling doubtful", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything"],
+    "response": "Anxiety is a natural response. Take deep breaths, and focus on the present moment."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by everything", "I'm feeling invisible", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "You are seen, you are heard, and you matter."
+  },
+  {
+    "patterns": ["I'm not sure I can trust anyone", "I'm feeling disconnected", "I'm not sure I should talk about this", "I'm scared to open up", "I feel like no one cares"],
+    "response": "This is a safe space. You're not alone, and I'm here to support you."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed", "I'm feeling like I'm not in control", "I'm feeling like I'm not good enough", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not moving forward"],
+    "response": "You are more than enough. Your worth isn't defined by challenges but by your courage to face them."
+  },
+  {
+    "patterns": ["I'm feeling stuck", "I'm struggling to find purpose", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "Purpose can be found in the smallest moments. Let's explore together."
+  },
+  {
+    "patterns": ["I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs", "I'm not taking time for myself", "I'm not practicing gratitude"],
+    "response": "Self-love is essential. Be kind to yourself, and remember that you deserve compassion."
+  },
+  {
+    "patterns": ["I'm not focusing on my strengths", "I'm not setting boundaries", "I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs"],
+    "response": "Your strengths are unique to you. Embrace them, and use them to navigate challenges."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by my thoughts", "I'm struggling to find clarity", "I'm feeling conflicted", "I'm feeling uncertain", "I'm feeling indecisive"],
+    "response": "Clarity comes with time. Be patient with yourself, and trust that answers will come."
+  },
+  {
+    "patterns": ["I'm feeling anxious", "I'm feeling fearful", "I'm feeling doubtful", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything"],
+    "response": "Anxiety is a natural response. Take deep breaths, and focus on the present moment."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by everything", "I'm feeling invisible", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "You are seen, you are heard, and you matter."
+  },
+  {
+    "patterns": ["I'm not sure I can trust anyone", "I'm feeling disconnected", "I'm not sure I should talk about this", "I'm scared to open up", "I feel like no one cares"],
+    "response": "This is a safe space. You're not alone, and I'm here to support you."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed", "I'm feeling like I'm not in control", "I'm feeling like I'm not good enough", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not moving forward"],
+    "response": "You are more than enough. Your worth isn't defined by challenges but by your courage to face them."
+  },
+  {
+    "patterns": ["I'm feeling stuck", "I'm struggling to find purpose", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "Purpose can be found in the smallest moments. Let's explore together."
+  },
+  {
+    "patterns": ["I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs", "I'm not taking time for myself", "I'm not practicing gratitude"],
+    "response": "Self-love is essential. Be kind to yourself, and remember that you deserve compassion."
+  },
+  {
+    "patterns": ["I'm not focusing on my strengths", "I'm not setting boundaries", "I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs"],
+    "response": "Your strengths are unique to you. Embrace them, and use them to navigate challenges."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by my thoughts", "I'm struggling to find clarity", "I'm feeling conflicted", "I'm feeling uncertain", "I'm feeling indecisive"],
+    "response": "Clarity comes with time. Be patient with yourself, and trust that answers will come."
+  },
+  {
+    "patterns": ["I'm feeling anxious", "I'm feeling fearful", "I'm feeling doubtful", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything"],
+    "response": "Anxiety is a natural response. Take deep breaths, and focus on the present moment."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by everything", "I'm feeling invisible", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "You are seen, you are heard, and you matter."
+  },
+    {
+    "patterns": ["I'm feeling overwhelmed", "I don't know if I can keep going", "Everything seems to be falling apart", "I'm struggling to stay positive", "I feel like giving up"],
+    "response": "It's okay to feel this way. You're not alone, and it's okay to take things one step at a time."
+  },
+  {
+    "patterns": ["I'm not good enough", "I can't handle this", "I'm afraid of the future", "I feel so alone", "I'm not making any progress"],
+    "response": "You are enough, just as you are. Your worth isn't defined by challenges but by your courage to face them."
+  },
+  {
+    "patterns": ["I just need someone to talk to", "I don't know how to express what I'm feeling", "I'm feeling misunderstood", "I don't know where to start", "I'm afraid of being judged"],
+    "response": "I'm here for you. Share what's on your mind, and let's talk it through together."
+  },
+  {
+    "patterns": ["I'm not sure I'll get through this", "I'm feeling hopeless", "I'm exhausted", "I'm feeling defeated", "I'm struggling to stay afloat"],
+    "response": "You are stronger than you realize. Take it one day at a time, and you'll find your way."
+  },
+  {
+    "patterns": ["I'm afraid of what's to come", "I'm feeling stuck", "I'm struggling to find purpose", "I'm feeling like I'm not moving forward", "I'm feeling like I'm not making a difference"],
+    "response": "The future is full of possibilities. Take it one day at a time, and trust that you're on the right path."
+  },
+  {
+    "patterns": ["I'm neglecting my self-care", "I'm not taking care of myself", "I'm feeling burnt out", "I'm not setting boundaries", "I'm not practicing self-love"],
+    "response": "Self-care is important. Take small steps to nurture yourself—you deserve it."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by my thoughts", "I'm struggling to find clarity", "I'm feeling conflicted", "I'm feeling uncertain", "I'm feeling indecisive"],
+    "response": "It's okay to have many thoughts. Take a moment to breathe and focus on the present."
+  },
+  {
+    "patterns": ["I'm feeling anxious", "I'm feeling fearful", "I'm feeling doubtful", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything"],
+    "response": "Anxiety and fear are natural responses. Acknowledge them, and take small steps forward."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by everything", "I'm feeling invisible", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "You are seen, you are heard, and you matter."
+  },
+  {
+    "patterns": ["I'm not sure I can trust anyone", "I'm feeling disconnected", "I'm not sure I should talk about this", "I'm scared to open up", "I feel like no one cares"],
+    "response": "This is a safe space. You're not alone, and I'm here to support you."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed", "I'm feeling like I'm not in control", "I'm feeling like I'm not good enough", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not moving forward"],
+    "response": "You are more than enough. Your worth isn't defined by challenges but by your courage to face them."
+  },
+  {
+    "patterns": ["I'm feeling stuck", "I'm struggling to find purpose", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "Purpose can be found in the smallest moments. Let's explore together."
+  },
+  {
+    "patterns": ["I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs", "I'm not taking time for myself", "I'm not practicing gratitude"],
+    "response": "Self-love is essential. Be kind to yourself, and remember that you deserve compassion."
+  },
+  {
+    "patterns": ["I'm not focusing on my strengths", "I'm not setting boundaries", "I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs"],
+    "response": "Your strengths are unique to you. Embrace them, and use them to navigate challenges."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by my thoughts", "I'm struggling to find clarity", "I'm feeling conflicted", "I'm feeling uncertain", "I'm feeling indecisive"],
+    "response": "Clarity comes with time. Be patient with yourself, and trust that answers will come."
+  },
+  {
+    "patterns": ["I'm feeling anxious", "I'm feeling fearful", "I'm feeling doubtful", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything"],
+    "response": "Anxiety is a natural response. Take deep breaths, and focus on the present moment."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by everything", "I'm feeling invisible", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "You are seen, you are heard, and you matter."
+  },
+  {
+    "patterns": ["I'm not sure I can trust anyone", "I'm feeling disconnected", "I'm not sure I should talk about this", "I'm scared to open up", "I feel like no one cares"],
+    "response": "This is a safe space. You're not alone, and I'm here to support you."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed", "I'm feeling like I'm not in control", "I'm feeling like I'm not good enough", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not moving forward"],
+    "response": "You are more than enough. Your worth isn't defined by challenges but by your courage to face them."
+  },
+  {
+    "patterns": ["I'm feeling stuck", "I'm struggling to find purpose", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "Purpose can be found in the smallest moments. Let's explore together."
+  },
+  {
+    "patterns": ["I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs", "I'm not taking time for myself", "I'm not practicing gratitude"],
+    "response": "Self-love is essential. Be kind to yourself, and remember that you deserve compassion."
+  },
+  {
+    "patterns": ["I'm not focusing on my strengths", "I'm not setting boundaries", "I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs"],
+    "response": "Your strengths are unique to you. Embrace them, and use them to navigate challenges."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by my thoughts", "I'm struggling to find clarity", "I'm feeling conflicted", "I'm feeling uncertain", "I'm feeling indecisive"],
+    "response": "Clarity comes with time. Be patient with yourself, and trust that answers will come."
+  },
+  {
+    "patterns": ["I'm feeling anxious", "I'm feeling fearful", "I'm feeling doubtful", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything"],
+    "response": "Anxiety is a natural response. Take deep breaths, and focus on the present moment."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by everything", "I'm feeling invisible", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "You are seen, you are heard, and you matter."
+  },
+  {
+    "patterns": ["I'm not sure I can trust anyone", "I'm feeling disconnected", "I'm not sure I should talk about this", "I'm scared to open up", "I feel like no one cares"],
+    "response": "This is a safe space. You're not alone, and I'm here to support you."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed", "I'm feeling like I'm not in control", "I'm feeling like I'm not good enough", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not moving forward"],
+    "response": "You are more than enough. Your worth isn't defined by challenges but by your courage to face them."
+  },
+  {
+    "patterns": ["I'm feeling stuck", "I'm struggling to find purpose", "I'm feeling like I'm not making a difference", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "Purpose can be found in the smallest moments. Let's explore together."
+  },
+  {
+    "patterns": ["I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs", "I'm not taking time for myself", "I'm not practicing gratitude"],
+    "response": "Self-love is essential. Be kind to yourself, and remember that you deserve compassion."
+  },
+  {
+    "patterns": ["I'm not focusing on my strengths", "I'm not setting boundaries", "I'm not practicing self-love", "I'm not forgiving myself", "I'm not prioritizing my needs"],
+    "response": "Your strengths are unique to you. Embrace them, and use them to navigate challenges."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by my thoughts", "I'm struggling to find clarity", "I'm feeling conflicted", "I'm feeling uncertain", "I'm feeling indecisive"],
+    "response": "Clarity comes with time. Be patient with yourself, and trust that answers will come."
+  },
+  {
+    "patterns": ["I'm feeling anxious", "I'm feeling fearful", "I'm feeling doubtful", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything"],
+    "response": "Anxiety is a natural response. Take deep breaths, and focus on the present moment."
+  },
+  {
+    "patterns": ["I'm feeling overwhelmed by everything", "I'm feeling invisible", "I'm feeling like I'm not enough", "I'm feeling like I'm not achieving anything", "I'm feeling like I'm not living up to expectations"],
+    "response": "You are seen, you are heard, and you matter."
+  },
+  {
+    "patterns": ["I'm not sure I can trust anyone", "I'm feeling disconnected", "I'm not sure I should talk about this", "I'm scared to open up", "I feel like no one cares"],
+    "response": "This is a safe space. You're not alone, and I'm here to support you."
   }
-
-
 
 
 
