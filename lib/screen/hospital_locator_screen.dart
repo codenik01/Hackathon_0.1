@@ -14,116 +14,99 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
   Position? currentPosition;
   String locationStatus = "Finding your location...";
 
-  // Comprehensive free hospital database for India
   final List<Map<String, dynamic>> allHospitals = [
-    {
-      "name": "AIIMS Hospital",
-      "contact": "+91-11-26588500",
-      "location": "Ansari Nagar, New Delhi",
-      "type": "Government Hospital",
-      "emergency": true,
-      "latitude": 28.5673,
-      "longitude": 77.2100,
-    },
-    {
-      "name": "Safdarjung Hospital",
-      "contact": "+91-11-26165060",
-      "location": "Ansari Nagar East, New Delhi",
-      "type": "Government Hospital",
-      "emergency": true,
-      "latitude": 28.5675,
-      "longitude": 77.2078,
-    },
-    {
-      "name": "Ram Manohar Lohia Hospital",
-      "contact": "+91-11-23365525",
-      "location": "Baba Kharak Singh Marg, New Delhi",
-      "type": "Government Hospital",
-      "emergency": true,
-      "latitude": 28.6265,
-      "longitude": 77.2142,
-    },
-    {
-      "name": "Lady Hardinge Medical College",
-      "contact": "+91-11-23344334",
-      "location": "Connaught Place, New Delhi",
-      "type": "Government Hospital",
-      "emergency": true,
-      "latitude": 28.6334,
-      "longitude": 77.2187,
-    },
-    {
-      "name": "Lok Nayak Hospital",
-      "contact": "+91-11-23237400",
-      "location": "Jawaharlal Nehru Marg, New Delhi",
-      "type": "Government Hospital",
-      "emergency": true,
-      "latitude": 28.6462,
-      "longitude": 77.2334,
-    },
-    {
-      "name": "Rural Health Center - Devgaon",
-      "contact": "+91-9876543210",
-      "location": "Devgaon Main Road",
-      "type": "Rural Health Center",
-      "emergency": true,
-      "latitude": 28.6129,
-      "longitude": 77.2295,
-    },
-    {
-      "name": "District Hospital - Shivpur",
-      "contact": "+91-9988776655",
-      "location": "Shivpur Town Center",
-      "type": "District Hospital",
-      "emergency": true,
-      "latitude": 28.6139,
-      "longitude": 77.2090,
-    },
-    {
-      "name": "Primary Care Clinic - Ramgarh",
-      "contact": "+91-9123456789",
-      "location": "Ramgarh, Sector 2",
-      "type": "Primary Clinic",
-      "emergency": false,
-      "latitude": 28.6140,
-      "longitude": 77.2190,
-    },
-    {
-      "name": "Apollo Hospital",
-      "contact": "+91-11-29871090",
-      "location": "Sarita Vihar, Delhi",
-      "type": "Private Hospital",
-      "emergency": true,
-      "latitude": 28.5313,
-      "longitude": 77.2927,
-    },
-    {
-      "name": "Max Hospital",
-      "contact": "+91-11-26515050",
-      "location": "Saket, New Delhi",
-      "type": "Private Hospital",
-      "emergency": true,
-      "latitude": 28.5245,
-      "longitude": 77.2159,
-    },
-    {
-      "name": "Fortis Hospital",
-      "contact": "+91-11-47135000",
-      "location": "Shalimar Bagh, Delhi",
-      "type": "Private Hospital",
-      "emergency": true,
-      "latitude": 28.7132,
-      "longitude": 77.1456,
-    },
-    {
-      "name": "Community Health Center",
-      "contact": "+91-8765432109",
-      "location": "Village Panchayat, Haryana",
-      "type": "Community Center",
-      "emergency": true,
-      "latitude": 28.7000,
-      "longitude": 77.1000,
-    },
+    
+  {
+    "name": "Chintamani Hospital",
+    "contact": "+91-20-24212112",
+    "location": "Plot # 53, Jedhe Nagar, Bibwewadi, Pune, Maharashtra",
+    "type": "General Hospital",
+    "emergency": true,
+    "latitude": 18.477818,
+    "longitude": 73.861414
+  },
+  {
+    "name": "Ruby Hall Clinic",
+    "contact": null,
+    "location": "Wanowrie, Pune, Maharashtra",
+    "type": "Multispeciality Hospital",
+    "emergency": true,
+    "latitude": 18.485870,
+    "longitude": 73.905853
+  },
+  {
+    "name": "MJM Hospital",
+    "contact": null,
+    "location": "1202/2, Ghole Rd, Shivajinagar, Pune, Maharashtra",
+    "type": "Multispeciality Hospital",
+    "emergency": true,
+    "latitude": 18.524338,
+    "longitude": 73.843887
+  },
+  {
+    "name": "Surya Sahyadri Hospital",
+    "contact": "+91-22-2454232",
+    "location": "1317, Kasba Peth, Pune, Maharashtra",
+    "type": "General / Private Hospital",
+    "emergency": true,
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "name": "Sassoon Hospital",
+    "contact": null,
+    "location": "Agarkar Nagar, Pune, Maharashtra 411001, India",
+    "type": "Government Hospital / General",
+    "emergency": true,
+    "latitude": 18.52508,
+    "longitude": 73.871466
+  },
+  {
+    "name": "Sahyadri Hospital, Lokmanya Colony",
+    "contact": null,
+    "location": "Kothrud, Pune, Maharashtra",
+    "type": "Private Multispeciality",
+    "emergency": true,
+    "latitude": 18.5075,
+    "longitude": 73.8058
+  },
+  {
+    "name": "Deenanath Mangeshkar Hospital",
+    "contact": null,
+    "location": "Erandwane, Kothrud, Pune, Maharashtra",
+    "type": "Tertiary Care Hospital",
+    "emergency": true,
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "name": "Jehangir Hospital",
+    "contact": null,
+    "location": "32, Sassoon Road, Pune, Maharashtra",
+    "type": "Private Hospital",
+    "emergency": true,
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "name": "Inlaks & Budhrani Hospital",
+    "contact": null,
+    "location": "Pune, Maharashtra",
+    "type": "Community / Private Hospital",
+    "emergency": true,
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "name": "Talegaon General Hospital",
+    "contact": null,
+    "location": "Talegaon, Pune, Maharashtra",
+    "type": "Government Hospital",
+    "emergency": true,
+    "latitude": 18.7167,
+    "longitude": 73.6833
+  }
+
   ];
 
   @override
@@ -134,7 +117,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
 
   Future<void> initializeLocation() async {
     try {
-      // Check location service
+
       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
         setState(() {
@@ -145,7 +128,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
         return;
       }
 
-      // Check and request permission
+    
       LocationPermission permission = await Geolocator.checkPermission();
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
@@ -161,7 +144,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
         return;
       }
 
-      // Get current position
+    
       Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.medium,
       );
@@ -171,7 +154,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
         locationStatus = "Location found - Finding nearby hospitals";
       });
 
-      // Find nearest hospitals
+
       await findNearestHospitals(position);
       
     } catch (e) {
@@ -205,7 +188,6 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
       }
     }
 
-    // Sort by distance and take nearest 15
     hospitalsWithDistance.sort((a, b) => a["distance"].compareTo(b["distance"]));
     
     setState(() {
@@ -216,7 +198,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
   }
 
   List<Map<String, dynamic>> getNearestHospitals(Position? position) {
-    // If no location, return first 10 hospitals
+  
     return allHospitals.take(10).map((hospital) => ({
       ...hospital,
       "distance": 0.0, // Unknown distance
@@ -278,7 +260,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
       ),
       body: Column(
         children: [
-          // Location Status
+         
           Container(
             padding: EdgeInsets.all(16),
             color: Colors.blue[50],
@@ -348,7 +330,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
           ),
 
 
-          // Hospitals List
+         
           Expanded(
             child: isLoading
                 ? Center(
@@ -408,7 +390,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(height: 6),
-                              // Distance
+                             
                               if (distance > 0)
                                 Row(
                                   children: [
@@ -427,7 +409,7 @@ class _HospitalLocatorScreenState extends State<HospitalLocatorScreen> {
                                   SizedBox(width: 4),
                                   Expanded(
                                     child: Text(
-                                      hospital["contact"],
+                                      hospital["contact"] ?? "Not Available",
                                       style: TextStyle(fontSize: 12),
                                       overflow: TextOverflow.ellipsis,
                                     ),

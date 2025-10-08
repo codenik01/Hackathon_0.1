@@ -1,9 +1,10 @@
 import 'dart:convert';
-import 'package:care_plus/AI_Model/custom_responses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:flutter_tts/flutter_tts.dart'; // Add this import
+import 'package:http/http.dart' as http;
 
 class ChatScreen extends StatefulWidget {
   final String? chatId;
@@ -24,33 +25,34 @@ class _ChatScreenState extends State<ChatScreen> {
   String _currentChatId = "";
   bool _isInitialized = false;
 
+  // Voice Input & Output
   stt.SpeechToText? _speech;
+  FlutterTts? _flutterTts;
   bool _isListening = false;
+  bool _isSpeaking = false;
   bool _isFirstUserMessage = true;
+
+  // Groq AI Configuration
+  final String _groqApiKey = "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";
+  final String _groqModel = "qwen/qwen3-32b";
 
   @override
   void initState() {
     super.initState();
     _initializeChat();
+    _initializeTTS();
   }
 
   Future<void> _initializeChat() async {
     try {
-      // Generate or use provided chat ID
-      _currentChatId = widget.chatId ?? "default_chat";
-      
-      // Load AI responses
+      _currentChatId = widget.chatId ?? "default_chat_${DateTime.now().millisecondsSinceEpoch}";
       await _loadResponses();
-      
-      // Initialize speech to text
       _speech = stt.SpeechToText();
       
-      // Initialize chat session if new
       if (widget.chatId != null) {
         await _initializeNewChat();
       }
       
-      // Load chat history
       await _loadChatHistory();
       
       setState(() {
@@ -65,6 +67,96 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
+  // Initialize Text-to-Speech
+  Future<void> _initializeTTS() async {
+    _flutterTts = FlutterTts();
+    
+    // Configure TTS settings
+    await _flutterTts?.setLanguage("en-US");
+    await _flutterTts?.setSpeechRate(0.5); // Slightly slower for medical content
+    await _flutterTts?.setVolume(1.0);
+    await _flutterTts?.setPitch(1.0);
+    
+    // Set up completion handler
+    _flutterTts?.setCompletionHandler(() {
+      setState(() {
+        _isSpeaking = false;
+      });
+    });
+    
+    _flutterTts?.setErrorHandler((msg) {
+      print("TTS Error: $msg");
+      setState(() {
+        _isSpeaking = false;
+      });
+    });
+  }
+
+  // Speak the response
+  Future<void> _speakResponse(String text) async {
+    if (_flutterTts == null) return;
+    
+    try {
+      setState(() {
+        _isSpeaking = true;
+      });
+      
+    
+      String cleanText = _cleanTextForSpeech(text);
+      
+      await _flutterTts?.speak(cleanText);
+    } catch (e) {
+      print("Error in TTS: $e");
+      setState(() {
+        _isSpeaking = false;
+      });
+    }
+  }
+
+ 
+  Future<void> _stopSpeaking() async {
+    if (_flutterTts == null) return;
+    
+    try {
+      await _flutterTts?.stop();
+      setState(() {
+        _isSpeaking = false;
+      });
+    } catch (e) {
+      print("Error stopping TTS: $e");
+    }
+  }
+
+  String _cleanTextForSpeech(String text) {
+
+    return text
+        .replaceAll(RegExp(r'\*.*?\*'), '') // Remove bold text
+        .replaceAll(RegExp(r'#'), '') // Remove headers
+        .replaceAll(RegExp(r'\[.*?\]'), '') // Remove links
+        .replaceAll(RegExp(r'\(.*?\)'), '') // Remove parentheses content
+        .replaceAll(RegExp(r'[^\w\s.,!?;:]'), '') // Remove special characters but keep punctuation
+        .replaceAll('🚨', 'Warning:') // Convert emojis to text
+        .replaceAll('🤕', 'Headache')
+        .replaceAll('🌀', 'Migraine')
+        .replaceAll('🌡️', 'Fever')
+        .replaceAll('🤧', 'Cold')
+        .replaceAll('😷', 'Cough')
+        .replaceAll('🤢', 'Stomach')
+        .replaceAll('😌', 'Stress')
+        .replaceAll('🧘', 'Anxiety')
+        .replaceAll('😴', 'Sleep')
+        .replaceAll('💪', 'Exercise')
+        .replaceAll('🥗', 'Diet')
+        .replaceAll('👋', 'Hello')
+        .replaceAll('🙏', 'Thank you')
+        .replaceAll('💚', '')
+        .replaceAll('🤖', '')
+        .replaceAll('✅', '')
+        .replaceAll('❌', '')
+        .replaceAll('⚠️', 'Note:')
+        .trim();
+  }
+
   Future<void> _initializeNewChat() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -75,10 +167,9 @@ class _ChatScreenState extends State<ChatScreen> {
         await prefs.setStringList("chatSessions", sessions);
         await prefs.setString("chatName_$_currentChatId", "New Chat");
         
-        // Add welcome message for new chats
         _messages.add({
           "sender": "bot",
-          "text": "Hello! I'm your healthcare assistant. How can I help you today?",
+          "text": "Hello! I'm your AI healthcare assistant powered by Groq AI. I can help you with general health information, symptom guidance, and wellness advice. What would you like to know about today?",
           "time": DateTime.now(),
         });
         await _saveChatHistory();
@@ -108,19 +199,10 @@ class _ChatScreenState extends State<ChatScreen> {
       });
     } catch (e) {
       print("Error loading responses: $e");
-      // Fallback responses
       _responseData = [
         {
           "patterns": ["hello", "hi", "hey"],
-          "response": "Hello! How can I assist you with your health concerns today?"
-        },
-        {
-          "patterns": ["headache", "head pain"],
-          "response": "Headaches can have various causes. Try resting in a quiet room, staying hydrated, and avoiding bright screens. If it persists or is severe, consult a doctor."
-        },
-        {
-          "patterns": ["fever", "temperature"],
-          "response": "For fever, rest and stay hydrated. You can take acetaminophen or ibuprofen as directed. If fever is above 103°F (39.4°C) or lasts more than 3 days, see a doctor."
+          "response": "Hello! I'm your healthcare assistant. How can I help you today?"
         }
       ];
     }
@@ -141,23 +223,512 @@ class _ChatScreenState extends State<ChatScreen> {
     _messageController.clear();
     _scrollToBottom();
 
-    // Update chat name with first user message
     if (_isFirstUserMessage && widget.chatId != null) {
       _updateChatName(text);
       _isFirstUserMessage = false;
     }
 
-    Future.delayed(Duration(milliseconds: 700), () {
-      _botReply(text);
-    });
+    _getAIResponse(text);
   }
+
+  Future<void> _getAIResponse(String userMessage) async {
+    try {
+      String response = "";
+      
+     
+      String customResponse = _getSmartHealthResponse(userMessage);
+      
+    
+      if (_shouldUseGroqAI(customResponse, userMessage)) {
+        print("🔄 Using Groq AI for response...");
+        response = await _getGroqResponse(userMessage);
+      } else {
+        print("✅ Using custom health response");
+        response = customResponse;
+    
+        await Future.delayed(Duration(milliseconds: 1000 + (userMessage.length * 5)));
+      }
+
+      setState(() {
+        _isTyping = false;
+        _messages.add({
+          "sender": "bot",
+          "text": response,
+          "time": DateTime.now(),
+        });
+      });
+
+      _saveChatHistory();
+      _scrollToBottom();
+
+    
+      _speakResponse(response);
+
+    } catch (e) {
+      print("Error getting AI response: $e");
+      
+  
+      String fallbackResponse = _getSmartHealthResponse(userMessage);
+      
+      setState(() {
+        _isTyping = false;
+        _messages.add({
+          "sender": "bot",
+          "text": fallbackResponse,
+          "time": DateTime.now(),
+        });
+      });
+      
+      _saveChatHistory();
+      _scrollToBottom();
+      
+
+      _speakResponse(fallbackResponse);
+    }
+  }
+
+  bool _shouldUseGroqAI(String customResponse, String userMessage) {
+    String msg = userMessage.toLowerCase();
+    
+    if (!_isHealthRelated(msg)) {
+      return true;
+    }
+    
+    List<String> genericResponses = [
+      "🤔 **Health Inquiry**",
+      "💡 **Healthcare Assistant**",
+      "Thank you for your message"
+    ];
+    
+    bool isGenericResponse = genericResponses.any((pattern) => customResponse.contains(pattern));
+    
+    return isGenericResponse;
+  }
+
+  Future<String> _getGroqResponse(String input) async {
+    final url = Uri.parse("https://api.groq.com/openai/v1/chat/completions");
+
+    try {
+      final response = await http.post(
+        url,
+        headers: {
+          "Authorization": "Bearer $_groqApiKey",
+          "Content-Type": "application/json",
+        },
+        body: jsonEncode({
+          "model": _groqModel,
+          "messages": [
+            {
+              "role": "system",
+              "content": """You are a helpful healthcare assistant. Provide general health information, symptom guidance, and wellness advice. 
+              IMPORTANT: 
+              - DO NOT repeat the user's question in your response
+              - DO NOT include phrases like "thinking", "let me", "I understand you asked about"
+              - Start directly with the answer
+              - Be concise and professional
+              - Always include medical disclaimers
+              - Provide evidence-based information
+              - Use clear, easy-to-understand language
+              - Format responses with bullet points when helpful
+              - Focus on general wellness and when to seek professional help"""
+            },
+            {"role": "user", "content": input}
+          ],
+          "temperature": 0.7,
+          "max_tokens": 500,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        if (data['choices'] != null && data['choices'].isNotEmpty) {
+          String aiResponse = data['choices'][0]['message']['content'] ?? "🤖 No response.";
+          
+        
+          aiResponse = _cleanGroqResponse(aiResponse, input);
+          
+     
+          if (!aiResponse.toLowerCase().contains('consult') && 
+              !aiResponse.toLowerCase().contains('doctor') && 
+              !aiResponse.toLowerCase().contains('professional')) {
+            aiResponse += "\n\n*Please consult with a healthcare professional for personalized medical advice.*";
+          }
+          
+          return aiResponse;
+        } else {
+          return "🤖 No valid response from AI.";
+        }
+      } else {
+        return "❌ Error ${response.statusCode}: ${response.body}";
+      }
+    } catch (e) {
+      return "⚠️ Network error: $e";
+    }
+  }
+
+  String _cleanGroqResponse(String aiResponse, String userInput) {
+    String cleaned = aiResponse;
+    
+    List<String> thinkingPhrases = [
+      "thinking",
+      "let me",
+      "I understand you asked about",
+      "you mentioned",
+      "you asked about",
+      "based on your question",
+      "regarding your query"
+    ];
+    
+    for (String phrase in thinkingPhrases) {
+      if (cleaned.toLowerCase().contains(phrase)) {
+        int phraseIndex = cleaned.toLowerCase().indexOf(phrase);
+        if (phraseIndex != -1) {
+          int endOfPhrase = cleaned.indexOf('.', phraseIndex);
+          if (endOfPhrase != -1) {
+            cleaned = cleaned.substring(endOfPhrase + 1).trim();
+          }
+        }
+      }
+    }
+    
+    if (cleaned.toLowerCase().contains(userInput.toLowerCase())) {
+      cleaned = cleaned.replaceAll(userInput, '').trim();
+    }
+    
+    if (cleaned.startsWith(':') || cleaned.startsWith('-')) {
+      cleaned = cleaned.substring(1).trim();
+    }
+    
+    if (cleaned.isNotEmpty) {
+      cleaned = cleaned[0].toUpperCase() + cleaned.substring(1);
+    }
+    
+    return cleaned;
+  }
+
+
+  void _startListening() async {
+    if (_speech == null) return;
+
+    try {
+      bool available = await _speech!.initialize(
+        onStatus: (val) => print('Speech Status: $val'),
+        onError: (val) => print('Speech Error: $val'),
+      );
+
+      if (!available) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Speech recognition not available")),
+        );
+        return;
+      }
+
+      setState(() => _isListening = true);
+
+      _speech!.listen(
+        onResult: (val) {
+          setState(() {
+            _messageController.text = val.recognizedWords;
+          });
+          
+          // Auto-send when user stops speaking (if we have text)
+          if (val.finalResult && val.recognizedWords.isNotEmpty) {
+            _sendMessageFromVoice(val.recognizedWords);
+          }
+        },
+        listenFor: Duration(seconds: 30),
+        pauseFor: Duration(seconds: 3),
+        cancelOnError: true,
+        partialResults: true,
+      );
+    } catch (e) {
+      print("Error starting speech recognition: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Error starting speech recognition")),
+      );
+    }
+  }
+
+  void _stopListening() {
+    try {
+      setState(() => _isListening = false);
+      _speech?.stop();
+    } catch (e) {
+      print("Error stopping speech recognition: $e");
+    }
+  }
+
+  void _sendMessageFromVoice(String text) {
+    if (text.trim().isEmpty) return;
+
+    setState(() {
+      _messages.add({
+        "sender": "user",
+        "text": text,
+        "time": DateTime.now(),
+      });
+      _isTyping = true;
+    });
+    _messageController.clear();
+    _scrollToBottom();
+
+    if (_isFirstUserMessage && widget.chatId != null) {
+      _updateChatName(text);
+      _isFirstUserMessage = false;
+    }
+
+    _getAIResponse(text);
+  }
+
+
+  Widget _buildVoiceControls() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+    
+        AnimatedContainer(
+          duration: Duration(milliseconds: 300),
+          decoration: BoxDecoration(
+            color: _isListening ? Colors.red[100] : Colors.transparent,
+            shape: BoxShape.circle,
+          ),
+          child: IconButton(
+            icon: Icon(
+              _isListening ? Icons.mic_off : Icons.mic,
+              color: _isListening ? Colors.red : Colors.green[700],
+              size: 28,
+            ),
+            onPressed: () {
+              if (_isListening) {
+                _stopListening();
+              } else {
+                _startListening();
+              }
+            },
+            tooltip: _isListening ? "Stop Recording" : "Start Voice Input",
+          ),
+        ),
+        
+        SizedBox(width: 20),
+        
+        // Speaker Button for Output
+        AnimatedContainer(
+          duration: Duration(milliseconds: 300),
+          decoration: BoxDecoration(
+            color: _isSpeaking ? Colors.green[100] : Colors.transparent,
+            shape: BoxShape.circle,
+          ),
+          child: IconButton(
+            icon: Icon(
+              _isSpeaking ? Icons.volume_up : Icons.volume_up_outlined,
+              color: _isSpeaking ? Colors.green[700] : Colors.grey[600],
+              size: 28,
+            ),
+            onPressed: () {
+              if (_isSpeaking) {
+                _stopSpeaking();
+              } else if (_messages.isNotEmpty && _messages.last["sender"] == "bot") {
+                // Speak the last bot message
+                _speakResponse(_messages.last["text"]);
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("No response to speak")),
+                );
+              }
+            },
+            tooltip: _isSpeaking ? "Stop Speaking" : "Repeat Last Response",
+          ),
+        ),
+      ],
+    );
+  }
+
+
+  String _getSmartHealthResponse(String userMessage) {
+  
+    String msg = userMessage.toLowerCase();
+    
+    Map<String, String> healthDatabase = {
+      'headache': """🤕 **Headache Management**
+
+**Quick Relief:**
+• Rest in a quiet, dark room
+• Apply cool compress to forehead
+• Stay hydrated with water
+• Gentle neck stretches
+• Consider OTC pain relief as directed
+
+**When to See a Doctor:**
+🚨 Sudden, severe headache
+🚨 Headache with fever or stiff neck
+🚨 Headache after head injury
+🚨 Vision changes or confusion
+🚨 Headache that worsens despite treatment
+
+*For chronic headaches, consult a healthcare provider.*""",
+
+      'migraine': """🌀 **Migraine Care**
+
+**During Attack:**
+• Rest in dark, quiet environment
+• Cold packs to head/neck
+• Stay hydrated
+• Avoid strong smells and lights
+• Use prescribed medications
+
+**Prevention:**
+• Identify triggers (food, stress, sleep)
+• Regular sleep schedule
+• Stress management
+• Stay hydrated
+• Consider preventive meds if frequent
+
+*Keep a migraine diary to track patterns.*""",
+
+
+      'fever': """🌡️ **Fever Management**
+
+**Home Care:**
+• Rest and hydrate well
+• Use acetaminophen/ibuprofen as directed
+• Light clothing
+• Lukewarm baths if comfortable
+• Monitor temperature regularly
+
+**Seek Medical Care:**
+🚨 Fever above 103°F (39.4°C)
+🚨 Lasts more than 3 days
+🚨 With rash, stiff neck, or confusion
+🚨 Difficulty breathing
+🚨 Signs of dehydration
+
+*Infants with fever need immediate care.*""",
+
+      
+    };
+
+    // Emergency detection
+    if (_isEmergency(msg)) {
+      return """🚨 **MEDICAL EMERGENCY**
+
+**Call Emergency Services or Go to Hospital For:**
+• Chest pain or pressure
+• Difficulty breathing
+• Severe bleeding
+• Sudden weakness/confusion
+• Suicidal thoughts
+• Severe allergic reaction
+• Stroke symptoms (FAST)
+
+**Your safety is the top priority!**
+Don't delay seeking appropriate medical care.""";
+    }
+
+    
+    for (String keyword in healthDatabase.keys) {
+      if (msg.contains(keyword)) {
+        return healthDatabase[keyword]!;
+      }
+    }
+
+   
+    if (_isGreeting(msg)) {
+      return """👋 **Hello! I'm Your Healthcare Assistant**
+
+I can help with:
+• **General health information**
+• **Symptom guidance** 
+• **Wellness advice**
+• **Lifestyle recommendations**
+
+**What would you like to know about today?**
+
+*Note: I provide general information only. Always consult healthcare professionals for medical advice.*""";
+    }
+
+    if (_isThanks(msg)) {
+      return """🙏 **You're Welcome!**
+
+I'm glad I could help. Remember:
+• **Persistent symptoms** - See a healthcare provider
+• **Emergencies** - Seek immediate care
+• **Personalized advice** - Consult your doctor
+
+**Stay proactive about your health!** 💚""";
+    }
+
+    if (_isHealthRelated(msg)) {
+      return """🤔 **Health Inquiry**
+
+I understand you're asking about health topics. Here's how I can help:
+
+**I can provide:**
+• General wellness information
+• Symptom explanation
+• Lifestyle recommendations
+• Preventive health tips
+
+**Please consult professionals for:**
+• Medical diagnoses
+• Treatment plans
+• Emergency situations
+• Persistent symptoms
+
+**What health information can I provide?**""";
+    }
+
+    return """💡 **Healthcare Assistant**
+
+I specialize in general health information and wellness guidance. 
+
+If you have questions about:
+• Common symptoms and management
+• Healthy lifestyle practices
+• Wellness strategies
+• When to seek medical care
+
+I'd be happy to help!
+
+**What would you like to know?**""";
+  }
+
+
+  bool _isEmergency(String message) {
+    List<String> emergencies = [
+      'chest pain', 'heart attack', 'stroke', 'can\'t breathe', 
+      'difficulty breathing', 'severe pain', 'unconscious', 
+      'suicidal', 'emergency', '911', 'bleeding heavily', 'choking'
+    ];
+    return emergencies.any((emergency) => message.contains(emergency));
+  }
+
+  bool _isHealthRelated(String message) {
+    List<String> healthKeywords = [
+      'pain', 'hurt', 'sick', 'ill', 'fever', 'cough', 'headache', 
+      'stomach', 'nausea', 'vomit', 'dizzy', 'tired', 'sleep', 
+      'stress', 'anxiety', 'medicine', 'drug', 'pill', 'doctor',
+      'hospital', 'clinic', 'symptom', 'diagnosis', 'treatment',
+      'health', 'wellness', 'exercise', 'diet', 'nutrition'
+    ];
+    return healthKeywords.any((keyword) => message.contains(keyword));
+  }
+
+  bool _isGreeting(String message) {
+    List<String> greetings = ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening'];
+    return greetings.any((greeting) => message.contains(greeting));
+  }
+
+  bool _isThanks(String message) {
+    List<String> thanks = ['thank', 'thanks', 'appreciate', 'grateful'];
+    return thanks.any((word) => message.contains(word));
+  }
+
 
   void _updateChatName(String firstMessage) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       String? currentName = prefs.getString("chatName_$_currentChatId");
       
-      // If it's still the default name, update it with the first message
       if (currentName == "New Chat") {
         String newName = firstMessage.length > 20 
             ? "${firstMessage.substring(0, 20)}..." 
@@ -167,33 +738,6 @@ class _ChatScreenState extends State<ChatScreen> {
     } catch (e) {
       print("Error updating chat name: $e");
     }
-  }
-
-  void _botReply(String userMessage) {
-    String msg = userMessage.toLowerCase();
-    String reply = "I'm not sure about that. For accurate medical advice, please consult a healthcare professional. I'm here to provide general health information.";
-
-    for (var item in _responseData) {
-      List patterns = item["patterns"];
-      for (var pattern in patterns) {
-        if (msg.contains(pattern.toLowerCase())) {
-          reply = item["response"];
-          break;
-        }
-      }
-    }
-
-    setState(() {
-      _isTyping = false;
-      _messages.add({
-        "sender": "bot",
-        "text": reply,
-        "time": DateTime.now(),
-      });
-    });
-
-    _saveChatHistory();
-    _scrollToBottom();
   }
 
   Future<void> _saveChatHistory() async {
@@ -230,57 +774,24 @@ class _ChatScreenState extends State<ChatScreen> {
         });
         _scrollToBottom();
       } else if (widget.chatId == null) {
-        // Default welcome message for main chat
         _messages.add({
           "sender": "bot",
-          "text": "Hello! I'm your healthcare assistant. How can I help you today?",
+          "text": """👋 **Hello! I'm Your Healthcare Assistant**
+
+I can help with:
+• **General health information**
+• **Symptom guidance** 
+• **Wellness advice**
+• **Lifestyle recommendations**
+
+**What would you like to know about today?**
+
+*Note: I provide general information only. Always consult healthcare professionals for medical advice.*""",
           "time": DateTime.now(),
         });
       }
     } catch (e) {
       print("Error loading chat history: $e");
-    }
-  }
-
-  void _startListening() async {
-    if (_speech == null) return;
-
-    try {
-      bool available = await _speech!.initialize(
-        onStatus: (val) => print('Status: $val'),
-        onError: (val) => print('Error: $val'),
-      );
-
-      if (!available) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Speech recognition not available")),
-        );
-        return;
-      }
-
-      setState(() => _isListening = true);
-
-      _speech!.listen(
-        onResult: (val) {
-          setState(() {
-            _messageController.text = val.recognizedWords;
-          });
-        },
-      );
-    } catch (e) {
-      print("Error starting speech recognition: $e");
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Error starting speech recognition")),
-      );
-    }
-  }
-
-  void _stopListening() {
-    try {
-      setState(() => _isListening = false);
-      _speech?.stop();
-    } catch (e) {
-      print("Error stopping speech recognition: $e");
     }
   }
 
@@ -306,10 +817,11 @@ class _ChatScreenState extends State<ChatScreen> {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   await prefs.remove("chatHistory_$_currentChatId");
                   
-                  // Add welcome message back
                   _messages.add({
                     "sender": "bot",
-                    "text": "Hello! I'm your healthcare assistant. How can I help you today?",
+                    "text": """👋 **Hello! I'm Your Healthcare Assistant**
+
+I'm here to help with general health information and wellness guidance. What would you like to know about today?""",
                     "time": DateTime.now(),
                   });
                   await _saveChatHistory();
@@ -399,7 +911,7 @@ class _ChatScreenState extends State<ChatScreen> {
             children: [
               CircularProgressIndicator(),
               SizedBox(height: 20),
-              Text("Initializing Chat..."),
+              Text("Initializing Healthcare Assistant..."),
             ],
           ),
         ),
@@ -409,7 +921,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: Text("AI Healthcare Assistant"),
+        title: Text("Healthcare Assistant"),
         backgroundColor: Colors.green[700],
         elevation: 0,
         leading: widget.showBackButton 
@@ -432,23 +944,35 @@ class _ChatScreenState extends State<ChatScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Chat message list
+            // Voice Controls
+            Container(
+              color: Colors.green[50],
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: _buildVoiceControls(),
+            ),
+            
             Expanded(
               child: _messages.isEmpty && !_isTyping
                   ? Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.chat_bubble_outline, size: 80, color: Colors.grey[400]),
+                          Icon(Icons.medical_services, size: 80, color: Colors.green[300]),
                           SizedBox(height: 20),
                           Text(
-                            "Start a conversation",
-                            style: TextStyle(fontSize: 18, color: Colors.grey[600]),
+                            "Healthcare Assistant",
+                            style: TextStyle(fontSize: 20, color: Colors.green[700], fontWeight: FontWeight.bold),
                           ),
                           SizedBox(height: 10),
                           Text(
-                            "Ask me about health concerns or symptoms",
-                            style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+                            "Use voice or text to ask about health concerns",
+                            style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "🎤 Tap microphone to speak\n🔊 Tap speaker to hear responses",
+                            style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                             textAlign: TextAlign.center,
                           ),
                         ],
@@ -468,12 +992,13 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
             ),
 
-            // Input bar at bottom
+            // Input Section
             Container(
               color: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(
                 children: [
+        
                   AnimatedContainer(
                     duration: Duration(milliseconds: 300),
                     decoration: BoxDecoration(
@@ -482,7 +1007,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                     child: IconButton(
                       icon: Icon(
-                        _isListening ? Icons.mic : Icons.mic_none,
+                        _isListening ? Icons.mic_off : Icons.mic,
                         color: _isListening ? Colors.red : Colors.grey,
                       ),
                       onPressed: () {
@@ -494,6 +1019,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       },
                     ),
                   ),
+                  
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
@@ -504,7 +1030,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: TextField(
                         controller: _messageController,
                         decoration: InputDecoration(
-                          hintText: "Type or speak your message...",
+                          hintText: "Type or use voice to ask about health...",
                           contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
@@ -515,7 +1041,10 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                     ),
                   ),
+                  
                   SizedBox(width: 8),
+                  
+                  // Send button
                   AnimatedContainer(
                     duration: Duration(milliseconds: 300),
                     child: ElevatedButton(
@@ -564,7 +1093,7 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              "AI is typing",
+              "Assistant is thinking...",
               style: TextStyle(fontSize: 14, color: Colors.grey[600]),
             ),
             SizedBox(width: 8),
@@ -590,7 +1119,7 @@ class _ChatScreenState extends State<ChatScreen> {
         width: 6,
         height: 6,
         decoration: BoxDecoration(
-          color: Colors.grey[600],
+          color: Colors.green[600],
           shape: BoxShape.circle,
         ),
         child: TweenAnimationBuilder<double>(
@@ -607,5 +1136,13 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _stopSpeaking();
+    _stopListening();
+    _flutterTts?.stop();
+    super.dispose();
   }
 }

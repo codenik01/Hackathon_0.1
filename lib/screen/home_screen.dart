@@ -1,4 +1,5 @@
 import 'package:care_plus/screen/custom_drawer.dart';
+
 import 'package:care_plus/screen/hospital_locator_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ChatScreen(),
     HospitalLocatorScreen(),
     ProfileScreen(),
+   
   ];
 
   void _onItemTapped(int index) {
@@ -43,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Hospitals',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        
         ],
       ),
     );

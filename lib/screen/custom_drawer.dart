@@ -43,11 +43,11 @@ Future<void> _createNewChat() async {
     
     SharedPreferences prefs = await SharedPreferences.getInstance();
     
-    // Add to chat sessions list
+   
     List<String> updatedSessions = List.from(_chatSessions);
     updatedSessions.add(newChatId);
     
-    // Save chat session metadata
+
     await prefs.setStringList("chatSessions", updatedSessions);
     await prefs.setString("chatName_$newChatId", "New Chat");
     
@@ -55,8 +55,8 @@ Future<void> _createNewChat() async {
       _chatSessions = updatedSessions.reversed.toList();
     });
     
-    // Close drawer and navigate to new chat WITH back button
-    Navigator.pop(context); // Close drawer first
+  
+    Navigator.pop(context); 
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -72,8 +72,8 @@ Future<void> _createNewChat() async {
 }
 
 Future<void> _loadChat(String chatId) async {
-  // Close drawer and navigate to existing chat WITH back button
-  Navigator.pop(context); // Close drawer first
+  
+  Navigator.pop(context); 
   Navigator.push(
     context,
     MaterialPageRoute(
@@ -102,7 +102,7 @@ Future<void> _loadChat(String chatId) async {
                 try {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   
-                  // Remove from sessions list
+        
                   List<String> updatedSessions = List.from(_chatSessions);
                   updatedSessions.removeAt(index);
                   
@@ -152,7 +152,7 @@ Future<void> _loadChat(String chatId) async {
         color: const Color(0xFFF2F3F7),
         child: Column(
           children: [
-            // Header Section
+        
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               height: 120,
@@ -181,7 +181,7 @@ Future<void> _loadChat(String chatId) async {
 
             const SizedBox(height: 20),
 
-            // New Chat Button
+         
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Container(
@@ -203,7 +203,7 @@ Future<void> _loadChat(String chatId) async {
 
             const SizedBox(height: 10),
 
-            // Chat History Section
+            
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -248,7 +248,7 @@ Future<void> _loadChat(String chatId) async {
               ),
             ),
 
-            // Logout Button at Bottom
+     
             Padding(
               padding: const EdgeInsets.all(15),
               child: ListTile(
@@ -338,7 +338,7 @@ Future<void> _loadChat(String chatId) async {
         try {
           var lastMsgData = jsonDecode(chatHistory.last);
           lastMessage = lastMsgData["text"] ?? "No messages";
-          // Shorten long messages
+        
           if (lastMessage.length > 30) {
             lastMessage = lastMessage.substring(0, 30) + "...";
           }
