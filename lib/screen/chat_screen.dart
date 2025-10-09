@@ -33,7 +33,7 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _isFirstUserMessage = true;
 
   // Groq AI Configuration
-  final String _groqApiKey = "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";
+  final String _groqApiKey = "";
   final String _groqModel = "qwen/qwen3-32b";
 
   @override
